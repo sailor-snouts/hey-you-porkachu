@@ -84,7 +84,7 @@ public class PlayerController : MonoBehaviour
         if(buns == 3) 
         {
             Debug.Log("PORKACHU LOVES YOU!");
-            SceneManager.LoadSceneAsync(2);
+            SceneManager.LoadSceneAsync(4);
         } else 
         {
             Debug.Log("PORKACHU HUNGRY!");
