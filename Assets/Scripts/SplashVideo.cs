@@ -9,7 +9,7 @@ public class SplashVideo : MonoBehaviour
     [SerializeField, Range(0, 10)]
     private int sceneSwitchDelay = 3;
     [SerializeField]
-    private string nextScene;
+    public string nextScene;
     private UnityEngine.Video.VideoPlayer video;
     private AudioSource audioTrack;
 

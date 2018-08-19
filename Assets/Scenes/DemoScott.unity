@@ -2044,6 +2044,11 @@ Prefab:
       propertyPath: m_Mass
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 114777279867132526, guid: a111f87aac6354b7fbe867a14c5c2535,
+        type: 2}
+      propertyPath: minigameScene
+      value: Joshua
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a111f87aac6354b7fbe867a14c5c2535, type: 2}
   m_IsPrefabAsset: 0

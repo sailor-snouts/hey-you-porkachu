@@ -16,6 +16,7 @@ public class PlayerController : MonoBehaviour
 
     Animator animator;
     public float speed;
+    public string minigameScene;
 
     // TODO: Trivial bun pickup count for triggering Porkachu fight
     private int buns = 0;
@@ -84,7 +85,7 @@ public class PlayerController : MonoBehaviour
         if(buns == 3) 
         {
             Debug.Log("PORKACHU LOVES YOU!");
-            SceneManager.LoadSceneAsync(4);
+            SceneManager.LoadSceneAsync(minigameScene);
         } else 
         {
             Debug.Log("PORKACHU HUNGRY!");
