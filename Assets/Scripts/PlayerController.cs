@@ -78,6 +78,12 @@ public class PlayerController : MonoBehaviour
             MeetPorkachu();
             return;
         } 
+        if(collision.gameObject.tag == "NPC")
+        {
+            MeetNPC();
+            return;
+        } 
+
     }
 
     private void MeetPorkachu()
@@ -90,5 +96,10 @@ public class PlayerController : MonoBehaviour
         {
             Debug.Log("PORKACHU HUNGRY!");
         }
+    }
+
+    private void MeetNPC() 
+    {
+        Debug.Log("OH HAI!");
     }
 }
