@@ -19,6 +19,10 @@ public class TargetController : MonoBehaviour {
         shrink();
     }
 
+    private void OnCollisionEnter2D(Collision2D collision) {
+        Destroy(gameObject);
+    }
+
     private void shrink() {
         float scale = Mathf.SmoothStep(transform.localScale.x, 0, shrinkRate);
         transform.localScale = new Vector3(scale, scale, scale);
