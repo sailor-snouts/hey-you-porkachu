@@ -18,11 +18,14 @@ public class BunController : MonoBehaviour {
     //How close a bun must be to its apex to consider it to have peaked
     private float apexMargin = 0.06f;
     private bool isFalling = false;
+    // The location to move the bun to as its ascending (where the mouse was when the throw started).
     private Vector2 targetVector;
+    // The location to move the bun to once it starts falling.
     private Vector2 terminalVector;
+    private CircleCollider2D circleCollider;
 	
 	void Start () {
-		
+        circleCollider = GetComponent<CircleCollider2D>();
 	}	
 	
 	void Update () {
@@ -52,6 +55,8 @@ public class BunController : MonoBehaviour {
             targetVector = terminalVector;
             // Lengthen the smooth time a bit on the descent, otherwise the springy nature of SmoothDamp causes the bun to fall too fast.
             smoothTime = smoothTime * 2;
+            //Activate bun's collider so that it can interact with targets.
+            circleCollider.enabled = true;
         }
     }
 
