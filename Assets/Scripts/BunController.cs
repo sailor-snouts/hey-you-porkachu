@@ -16,10 +16,7 @@ public class BunController : MonoBehaviour {
 	}
 
     private void shrink() {
-        float xScale = Mathf.SmoothStep(transform.localScale.x, 0.35f, shrinkRate);
-        float yScale = Mathf.SmoothStep(transform.localScale.y, 0.35f, shrinkRate);
-        float zScale = Mathf.SmoothStep(transform.localScale.z, 0.35f, shrinkRate);
-
-        transform.localScale = new Vector3(xScale, yScale, zScale);
+        float scale = Mathf.SmoothStep(transform.localScale.x, 0.35f, shrinkRate);
+        transform.localScale = new Vector3(scale, scale, scale);
     }
 }
