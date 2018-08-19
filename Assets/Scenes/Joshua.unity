@@ -152,7 +152,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefab: {fileID: 1598807273656360, guid: 3ad4db6f096a47640929020f374d3a1b, type: 2}
   startingHeight: -5
-  forceFactor: 90
+  throwDelay: 0.25
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0

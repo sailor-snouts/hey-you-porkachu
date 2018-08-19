@@ -4,9 +4,12 @@ using UnityEngine;
 
 public class BunController : MonoBehaviour {
 
+    // How quickly the bun is shrunk, or how 'fast' it appears to move away from the player.
+    // The smaller this number, the slower the bun will shrink.
     [SerializeField, Range(0.08f, 0.16f)]
     private float shrinkRate = 0.1f;
 
+    // The smaller this number, the faster the bun will move through its arc.
     [SerializeField, Range(0.08f, 0.2f)]
     private float smoothTime = 0.17f;
     
