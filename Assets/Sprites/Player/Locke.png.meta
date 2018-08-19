@@ -1,0 +1,617 @@
+fileFormatVersion: 2
+guid: 9bf442b64a94e4b05ad87fa991f34874
+timeCreated: 1464746957
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Locke_Walk_Up_1
+    21300002: Locke_Walk_Up_2
+    21300004: Locke_Walk_Up_3
+    21300006: Locke_3
+    21300008: Locke_4
+    21300010: Locke_5
+    21300012: Locke_6
+    21300014: Locke_7
+    21300016: Locke_8
+    21300018: Locke_Walk_Down_1
+    21300020: Locke_Walk_Down_2
+    21300022: Locke_Walk_Down_3
+    21300024: Locke_12
+    21300026: Locke_13
+    21300028: Locke_14
+    21300030: Locke_15
+    21300032: Locke_16
+    21300034: Locke_17
+    21300036: Locke_Walk_Left_1
+    21300038: Locke_Walk_Left_2
+    21300040: Locke_Walk_Left_3
+    21300042: Locke_21
+    21300044: Locke_22
+    21300046: Locke_23
+    21300048: Locke_24
+    21300050: Locke_25
+    21300052: Locke_26
+    21300054: Locke_27
+    21300056: Locke_28
+    21300058: Locke_Idle_1
+    21300060: Locke_Idle_2
+    21300062: Locke_31
+    21300064: Locke_32
+    21300066: Locke_33
+    21300068: Locke_34
+    21300070: Locke_35
+    21300072: Locke_36
+    21300074: Locke_37
+    21300076: Locke_38
+    21300078: Locke_39
+    21300080: Locke_40
+    21300082: Locke_Avatar
+    21300084: Locke_42
+    21300086: Locke_43
+    21300088: Locke_44
+    21300090: Locke_45
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: 0
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 32
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: Locke_Walk_Up_1
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 189
+        width: 16
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Locke_Walk_Up_2
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 189
+        width: 16
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Locke_Walk_Up_3
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 189
+        width: 16
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Locke_3
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 189
+        width: 16
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Locke_4
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 189
+        width: 16
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Locke_5
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 189
+        width: 16
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Locke_6
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 189
+        width: 16
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Locke_7
+      rect:
+        serializedVersion: 2
+        x: 149
+        y: 189
+        width: 16
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Locke_8
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 189
+        width: 16
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Locke_Walk_Down_1
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 158
+        width: 16
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Locke_Walk_Down_2
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 158
+        width: 16
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Locke_Walk_Down_3
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 158
+        width: 16
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Locke_12
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 158
+        width: 16
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Locke_13
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 158
+        width: 16
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Locke_14
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 158
+        width: 16
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Locke_15
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 158
+        width: 16
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Locke_16
+      rect:
+        serializedVersion: 2
+        x: 151
+        y: 158
+        width: 15
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Locke_17
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 158
+        width: 15
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Locke_Walk_Left_1
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 127
+        width: 16
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Locke_Walk_Left_2
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 127
+        width: 16
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Locke_Walk_Left_3
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 127
+        width: 16
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Locke_21
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 127
+        width: 16
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Locke_22
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 126
+        width: 16
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Locke_23
+      rect:
+        serializedVersion: 2
+        x: 118
+        y: 126
+        width: 16
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Locke_24
+      rect:
+        serializedVersion: 2
+        x: 151
+        y: 126
+        width: 16
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Locke_25
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 126
+        width: 16
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Locke_26
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 96
+        width: 16
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Locke_27
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 96
+        width: 16
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Locke_28
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 96
+        width: 16
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Locke_Idle_1
+      rect:
+        serializedVersion: 2
+        x: 151
+        y: 94
+        width: 16
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Locke_Idle_2
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 94
+        width: 16
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Locke_31
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 67
+        width: 16
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Locke_32
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 67
+        width: 16
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Locke_33
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 67
+        width: 15
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Locke_34
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 67
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Locke_35
+      rect:
+        serializedVersion: 2
+        x: 94
+        y: 66
+        width: 16
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Locke_36
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 66
+        width: 15
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Locke_37
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 64
+        width: 16
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Locke_38
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 64
+        width: 16
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Locke_39
+      rect:
+        serializedVersion: 2
+        x: 178
+        y: 64
+        width: 15
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Locke_40
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 45
+        width: 24
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Locke_Avatar
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 21
+        width: 38
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -15, y: 20}
+        - {x: -17, y: 19}
+        - {x: -19, y: 12}
+        - {x: -19, y: -9}
+        - {x: -8, y: -20}
+        - {x: 19, y: -20}
+        - {x: 19, y: 18}
+        - {x: 14, y: 20}
+    - name: Locke_42
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 33
+        width: 15
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Locke_43
+      rect:
+        serializedVersion: 2
+        x: 161
+        y: 33
+        width: 16
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Locke_44
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 3
+        width: 16
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Locke_45
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 1
+        width: 16
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
