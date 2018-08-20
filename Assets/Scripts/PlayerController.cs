@@ -20,6 +20,7 @@ public class PlayerController : MonoBehaviour
 
     // TODO: Trivial bun pickup count for triggering Porkachu fight
     private int buns = 0;
+    private Vector2 move;
 
     void Start()
     {
@@ -29,7 +30,7 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         UpdateAnimationState();
-        UpdateMovement();
+        move = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")).normalized;
     }
 
     void UpdateAnimationState()
@@ -49,10 +50,11 @@ public class PlayerController : MonoBehaviour
 
     }
 
-    void UpdateMovement()
+    void FixedUpdate()
     {
-        var move = new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"), 0);
-        transform.position += move * speed * Time.deltaTime;   
+        float posX = transform.position.x + (this.move.x * speed * Time.fixedDeltaTime);
+        float posY = transform.position.y + (this.move.y * speed * Time.fixedDeltaTime);
+        transform.position = new Vector2(posX, posY);   
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
