@@ -2254,49 +2254,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 95481204695795368, guid: a111f87aac6354b7fbe867a14c5c2535,
-        type: 2}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 50606006107132496, guid: a111f87aac6354b7fbe867a14c5c2535,
-        type: 2}
-      propertyPath: m_LinearDrag
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 50606006107132496, guid: a111f87aac6354b7fbe867a14c5c2535,
-        type: 2}
-      propertyPath: m_AngularDrag
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 114777279867132526, guid: a111f87aac6354b7fbe867a14c5c2535,
         type: 2}
       propertyPath: speed
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 50606006107132496, guid: a111f87aac6354b7fbe867a14c5c2535,
-        type: 2}
-      propertyPath: m_Mass
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114777279867132526, guid: a111f87aac6354b7fbe867a14c5c2535,
-        type: 2}
-      propertyPath: minigameScene
-      value: Battle
-      objectReference: {fileID: 0}
-    - target: {fileID: 1898757045595226, guid: a111f87aac6354b7fbe867a14c5c2535, type: 2}
-      propertyPath: m_TagString
-      value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 50606006107132496, guid: a111f87aac6354b7fbe867a14c5c2535,
-        type: 2}
-      propertyPath: m_Interpolate
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 50606006107132496, guid: a111f87aac6354b7fbe867a14c5c2535,
-        type: 2}
-      propertyPath: m_BodyType
-      value: 0
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a111f87aac6354b7fbe867a14c5c2535, type: 2}
