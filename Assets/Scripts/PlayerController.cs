@@ -13,7 +13,6 @@ public struct PlayerAnimation
 
 public class PlayerController : MonoBehaviour
 {
-
     Animator animator;
     public float speed;
     public string minigameScene;
@@ -22,15 +21,32 @@ public class PlayerController : MonoBehaviour
     private int buns = 0;
     private Vector2 move;
 
+    // Player Action Affordance & controls
+    private PlayerActionUI actionUI;
+    private bool interactive = false;
+    private GameObject interactiveObject = null;
+
     void Start()
     {
         animator = GetComponent<Animator>();
+        actionUI = GetComponentInChildren<PlayerActionUI>();
     }
 
     void Update()
     {
+        ProcessInteraction();
         UpdateAnimationState();
         move = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")).normalized;
+    }
+
+    void ProcessInteraction() 
+    {
+        if( interactive && interactiveObject ) {
+            if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.X) || Input.GetKeyDown(KeyCode.Return))
+            {
+                PerformAction();
+            }
+        }
     }
 
     void UpdateAnimationState()
@@ -57,35 +73,94 @@ public class PlayerController : MonoBehaviour
         transform.position = new Vector2(posX, posY);   
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    void EnableInteraction(GameObject actionable)
     {
-        if(collision.gameObject.tag == "BunPickup")
-        {
-            PickupBun(collision.gameObject);
-            return;
-        } 
+        actionUI.Show();
+        interactive = true;
+        interactiveObject = actionable;
     }
 
-    private void PickupBun(GameObject bun)
+    void DisableInteraction()
     {
-        buns++;
-        Debug.Log("Oh shit a bun! Buns = " + buns);
-        Destroy(bun);
+        actionUI.Hide();
+        interactive = false;
+        interactiveObject = null;
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if( collision.gameObject.GetComponent<Actionable>()) 
+        {
+            if (actionUI)
+            {
+                EnableInteraction(collision.gameObject);
+            } else {
+                Debug.LogError("Oh shit no action ui!");
+            }
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if( actionUI )
+        {
+            DisableInteraction();
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.tag == "Porkachu")
+        if (collision.gameObject.GetComponent<Actionable>())
+        {
+            if (actionUI)
+            {
+                EnableInteraction(collision.gameObject);
+            }
+            else
+            {
+                Debug.LogError("Oh shit no action ui!");
+            }
+        }
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (actionUI)
+        {
+            DisableInteraction();
+        }
+    }
+
+    private void PerformAction() 
+    {
+        if(!interactiveObject) {
+            Debug.LogWarning("Tried to interact on a null object!");
+            return;
+        }
+
+        if(interactiveObject.tag == "BunPickup")
+        {
+            PickupBun();
+            return;
+        } 
+        if(interactiveObject.tag == "Porkachu")
         {
             MeetPorkachu();
             return;
         } 
-        if(collision.gameObject.tag == "NPC")
+        if(interactiveObject.tag == "NPC")
         {
             MeetNPC();
             return;
         } 
+       
+    }
 
+    private void PickupBun()
+    {
+        buns++;
+        Debug.Log("Oh shit a bun! Buns = " + buns);
+        Destroy(interactiveObject);
     }
 
     private void MeetPorkachu()
