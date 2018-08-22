@@ -4,11 +4,11 @@ using System.Collections;
 
 public struct PlayerAnimation
 {
-    public const int ANIMATION_IDLE = -1;
-    public const int ANIMATION_WALK_LEFT = 0;
-    public const int ANIMATION_WALK_RIGHT = 1;
-    public const int ANIMATION_WALK_UP = 2;
+    public const int ANIMATION_IDLE = 0;
+    public const int ANIMATION_WALK_UP = 1;
+    public const int ANIMATION_WALK_RIGHT = 2;
     public const int ANIMATION_WALK_DOWN = 3;
+    public const int ANIMATION_WALK_LEFT = 4;
 }
 
 public class PlayerController : MonoBehaviour
@@ -56,6 +56,12 @@ public class PlayerController : MonoBehaviour
             int dir = horizontal > 0 ? 1 : -1;
             animator.SetInteger("WalkingDirection", horizontal > 0 ? PlayerAnimation.ANIMATION_WALK_RIGHT : PlayerAnimation.ANIMATION_WALK_LEFT);
             this.move = new Vector2(1 * dir, 0);
+            if ((dir == 1 && transform.localScale.x > 0) || (dir == -1 && transform.localScale.x < 0))
+            {
+                Vector3 theScale = transform.localScale;
+                theScale.x *= -1;
+                transform.localScale = theScale;
+            }
         }
         else if (Mathf.Abs(horizontal) < Mathf.Abs(veritcal))
         {
