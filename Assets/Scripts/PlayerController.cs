@@ -26,10 +26,13 @@ public class PlayerController : MonoBehaviour
     private bool interactive = false;
     private GameObject interactiveObject = null;
 
+    private Rigidbody2D rgb2d;
+
     void Start()
     {
         animator = GetComponent<Animator>();
         actionUI = GetComponentInChildren<PlayerActionUI>();
+        rgb2d = GetComponent<Rigidbody2D>();
     }
 
     void Update()
@@ -68,9 +71,27 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
+        Debug.Log("Old x: " + transform.position.x);
+        var oldPosition = Clamp(transform.position, 64);
+        Debug.Log("Old X Clamped: " + oldPosition.x);
         float posX = transform.position.x + (this.move.x * speed * Time.fixedDeltaTime);
         float posY = transform.position.y + (this.move.y * speed * Time.fixedDeltaTime);
-        transform.position = new Vector2(posX, posY);   
+
+        var moveVector = new Vector2(posX, posY);
+        rgb2d.MovePosition(Clamp(moveVector, 64));
+    }
+
+    Vector2 Clamp(Vector2 moveVector, int pixelsPerUnit)
+    {
+        Vector2 vectorInPixels = new Vector2(
+            Mathf.RoundToInt(moveVector.x * pixelsPerUnit),
+            Mathf.RoundToInt(moveVector.y * pixelsPerUnit));
+        Debug.Log("Vector X in pixels: " + vectorInPixels.x);
+        // Smoots to per-pixel movement
+
+        var meh = vectorInPixels / pixelsPerUnit;
+        Debug.Log(" 'Clamped' X: " + meh.x);
+        return vectorInPixels / pixelsPerUnit;
     }
 
     void EnableInteraction(GameObject actionable)
