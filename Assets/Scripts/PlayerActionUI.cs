@@ -47,7 +47,7 @@ public class PlayerActionUI : MonoBehaviour {
             default:
                 return;
         }
-
+        Debug.Log("Check direction (" + checkDirection.x + ", " + checkDirection.y + ")");
         Transform parent = this.transform.parent;
         Debug.DrawLine(parent.position, parent.position + (Vector3) checkDirection.normalized * this.actionCheckMagnitude, Color.red);
         RaycastHit2D[] hitColliders = Physics2D.RaycastAll(parent.position, checkDirection.normalized, this.actionCheckMagnitude);
@@ -57,8 +57,10 @@ public class PlayerActionUI : MonoBehaviour {
             switch (obj.tag)
             {
                 case "BunPickup":
+                    Debug.Log("Interact with bun!");
                     break;
                 case "Porkachu":
+                    Debug.Log("Hey you Porkachu!");
                     break;
                 case "NPC":
                     Debug.Log("starting dialogue");
