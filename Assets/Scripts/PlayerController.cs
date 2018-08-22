@@ -13,9 +13,13 @@ public struct PlayerAnimation
 
 public class PlayerController : MonoBehaviour
 {
-    Animator animator;
-    public float speed;
+    [SerializeField]
+    private float speed = 10f;
+    [SerializeField]
     public string minigameScene;
+
+    private Animator animator;
+    private Rigidbody2D r2bd;
 
     // TODO: Trivial bun pickup count for triggering Porkachu fight
     private int buns = 0;
@@ -32,14 +36,44 @@ public class PlayerController : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         actionUI = GetComponentInChildren<PlayerActionUI>();
-        rgb2d = GetComponent<Rigidbody2D>();
+        r2bd = GetComponent<Rigidbody2D>();
     }
 
     void Update()
     {
         ProcessInteraction();
-        UpdateAnimationState();
-        move = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")).normalized;
+        HandleMovement();
+    }
+
+    void HandleMovement()
+    {
+        float horizontal = Input.GetAxis("Horizontal");
+        float veritcal = Input.GetAxis("Vertical");
+
+        if (Mathf.Abs(horizontal) > Mathf.Abs(veritcal))
+        {
+            // left or right
+            int dir = horizontal > 0 ? 1 : -1;
+            animator.SetInteger("WalkingDirection", horizontal > 0 ? PlayerAnimation.ANIMATION_WALK_RIGHT : PlayerAnimation.ANIMATION_WALK_LEFT);
+            this.move = new Vector2(1 * dir, 0);
+        }
+        else if (Mathf.Abs(horizontal) < Mathf.Abs(veritcal))
+        {
+            // top or bottom
+            int dir = veritcal > 0 ? 1 : -1;
+            animator.SetInteger("WalkingDirection", veritcal > 0 ? PlayerAnimation.ANIMATION_WALK_UP : PlayerAnimation.ANIMATION_WALK_DOWN);
+            this.move = new Vector2(0, 1 * dir);
+        }
+        else
+        {
+            animator.SetInteger("WalkingDirection", PlayerAnimation.ANIMATION_IDLE);
+            this.move = Vector2.zero;
+        }
+    }
+
+    private void FixedUpdate()
+    {
+        r2bd.velocity = this.move * this.speed;
     }
 
     void ProcessInteraction() 
@@ -50,48 +84,6 @@ public class PlayerController : MonoBehaviour
                 PerformAction();
             }
         }
-    }
-
-    void UpdateAnimationState()
-    {
-        if (Input.GetKey(KeyCode.A))
-        {
-            animator.SetInteger("WalkingDirection", PlayerAnimation.ANIMATION_WALK_LEFT);
-        }
-        else if (Input.GetKey(KeyCode.D))
-        {
-            animator.SetInteger("WalkingDirection", PlayerAnimation.ANIMATION_WALK_RIGHT);
-        }
-        else
-        {
-            animator.SetInteger("WalkingDirection", PlayerAnimation.ANIMATION_IDLE);
-        }
-
-    }
-
-    void FixedUpdate()
-    {
-        Debug.Log("Old x: " + transform.position.x);
-        var oldPosition = Clamp(transform.position, 64);
-        Debug.Log("Old X Clamped: " + oldPosition.x);
-        float posX = transform.position.x + (this.move.x * speed * Time.fixedDeltaTime);
-        float posY = transform.position.y + (this.move.y * speed * Time.fixedDeltaTime);
-
-        var moveVector = new Vector2(posX, posY);
-        rgb2d.MovePosition(Clamp(moveVector, 64));
-    }
-
-    Vector2 Clamp(Vector2 moveVector, int pixelsPerUnit)
-    {
-        Vector2 vectorInPixels = new Vector2(
-            Mathf.RoundToInt(moveVector.x * pixelsPerUnit),
-            Mathf.RoundToInt(moveVector.y * pixelsPerUnit));
-        Debug.Log("Vector X in pixels: " + vectorInPixels.x);
-        // Smoots to per-pixel movement
-
-        var meh = vectorInPixels / pixelsPerUnit;
-        Debug.Log(" 'Clamped' X: " + meh.x);
-        return vectorInPixels / pixelsPerUnit;
     }
 
     void EnableInteraction(GameObject actionable)
