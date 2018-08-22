@@ -35,8 +35,34 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         ProcessInteraction();
-        UpdateAnimationState();
-        move = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")).normalized;
+        HandleMovement();
+    }
+
+    void HandleMovement()
+    {
+        float horizontal = Input.GetAxis("Horizontal");
+        float veritcal = Input.GetAxis("Vertical");
+
+        if (Mathf.Abs(horizontal) > Mathf.Abs(veritcal))
+        {
+            // left or right
+            int dir = horizontal > 0 ? 1 : -1;
+            animator.SetInteger("WalkingDirection", horizontal > 0 ? PlayerAnimation.ANIMATION_WALK_RIGHT : PlayerAnimation.ANIMATION_WALK_LEFT);
+            this.move = new Vector2(1 * dir, 0);
+        }
+        else if (Mathf.Abs(horizontal) < Mathf.Abs(veritcal))
+        {
+            // top or bottom
+            int dir = veritcal > 0 ? 1 : -1;
+            animator.SetInteger("WalkingDirection", veritcal > 0 ? PlayerAnimation.ANIMATION_WALK_UP : PlayerAnimation.ANIMATION_WALK_DOWN);
+            this.move = new Vector2(0, 1 * dir);
+        }
+        else
+        {
+            this.move = Vector2.zero;
+        }
+
+        this.transform.position += (Vector3)this.move * this.speed * Time.deltaTime;
     }
 
     void ProcessInteraction() 
@@ -47,30 +73,6 @@ public class PlayerController : MonoBehaviour
                 PerformAction();
             }
         }
-    }
-
-    void UpdateAnimationState()
-    {
-        if (Input.GetKey(KeyCode.A))
-        {
-            animator.SetInteger("WalkingDirection", PlayerAnimation.ANIMATION_WALK_LEFT);
-        }
-        else if (Input.GetKey(KeyCode.D))
-        {
-            animator.SetInteger("WalkingDirection", PlayerAnimation.ANIMATION_WALK_RIGHT);
-        }
-        else
-        {
-            animator.SetInteger("WalkingDirection", PlayerAnimation.ANIMATION_IDLE);
-        }
-
-    }
-
-    void FixedUpdate()
-    {
-        float posX = transform.position.x + (this.move.x * speed * Time.fixedDeltaTime);
-        float posY = transform.position.y + (this.move.y * speed * Time.fixedDeltaTime);
-        transform.position = new Vector2(posX, posY);   
     }
 
     void EnableInteraction(GameObject actionable)
