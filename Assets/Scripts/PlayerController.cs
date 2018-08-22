@@ -13,9 +13,13 @@ public struct PlayerAnimation
 
 public class PlayerController : MonoBehaviour
 {
-    Animator animator;
-    public float speed;
+    [SerializeField]
+    private float speed = 10f;
+    [SerializeField]
     public string minigameScene;
+
+    private Animator animator;
+    private Rigidbody2D r2bd;
 
     // TODO: Trivial bun pickup count for triggering Porkachu fight
     private int buns = 0;
@@ -30,6 +34,7 @@ public class PlayerController : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         actionUI = GetComponentInChildren<PlayerActionUI>();
+        r2bd = GetComponent<Rigidbody2D>();
     }
 
     void Update()
@@ -62,8 +67,11 @@ public class PlayerController : MonoBehaviour
             animator.SetInteger("WalkingDirection", PlayerAnimation.ANIMATION_IDLE);
             this.move = Vector2.zero;
         }
+    }
 
-        this.transform.position += (Vector3)this.move * this.speed * Time.deltaTime;
+    private void FixedUpdate()
+    {
+        r2bd.velocity = this.move * this.speed;
     }
 
     void ProcessInteraction() 
