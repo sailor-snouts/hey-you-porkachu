@@ -59,6 +59,7 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
+            animator.SetInteger("WalkingDirection", PlayerAnimation.ANIMATION_IDLE);
             this.move = Vector2.zero;
         }
 
