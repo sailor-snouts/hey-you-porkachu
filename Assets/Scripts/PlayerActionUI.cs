@@ -77,6 +77,10 @@ public class PlayerActionUI : MonoBehaviour {
                     DialogueTrigger dialogue = obj.GetComponent<DialogueTrigger>();
                     dialogue.TriggerDialogue();
                     break;
+                case "Door":
+                    Debug.Log("Trying to interact with Door");
+                    DoorAction(obj.GetComponent<Door>());
+                    break;
                 default:
                     break;
             }
@@ -97,4 +101,20 @@ public class PlayerActionUI : MonoBehaviour {
         }
         this.sprite.enabled = isShowingIcon;
     }
+
+    void DoorAction(Door door) 
+    {
+        if(door.IsLocked()) {
+            Debug.Log("Locked door!");
+            // Does the player have the right key?
+            // if so, open!
+            // else, let them know!  display Locked message
+            return;
+        } else {
+            if(!door.IsOpen()) {
+                door.Open();
+            }
+        }
+    }
+
 }
