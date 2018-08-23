@@ -20,6 +20,7 @@ public class Door : MonoBehaviour {
         }
 
         isOpen = false;
+        isLocked = false;
 	}
 
     void Update () {
@@ -27,12 +28,25 @@ public class Door : MonoBehaviour {
         closed.enabled = !isOpen;
 	}
 
-    void Open() {
-        isOpen = true;
+    public bool IsLocked() {
+        return isLocked;
     }
 
-    void Close() {
-        isOpen = false;
+    public bool IsOpen() {
+        return isOpen;
     }
 
+    public void Open() {
+        SetOpenState(true);
+    }
+
+    public void Close() {
+        SetOpenState(false);
+    }
+
+    private void SetOpenState(bool state) {
+        isOpen = state;
+        var boxCollider = GetComponent<BoxCollider2D>();
+        boxCollider.enabled = !state;
+    }
 }
