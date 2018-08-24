@@ -13,7 +13,6 @@ public struct PlayerAnimation
 
 public class PlayerMovementController : MonoBehaviour
 {
-
     public string minigameScene;
     [SerializeField]
     private float speed = 10f;
@@ -22,10 +21,16 @@ public class PlayerMovementController : MonoBehaviour
     private Rigidbody2D r2bd;
     private Vector2 move;
     private int facing;
+    private bool isLocked;
 
     public int GetDirection()
     {
         return this.facing;
+    }
+
+    public void SetLocked (bool locked)
+    {
+        this.isLocked = locked;
     }
 
     void Start()
@@ -36,7 +41,10 @@ public class PlayerMovementController : MonoBehaviour
 
     void Update()
     {
-        this.HandleMovement();
+        if (!this.isLocked)
+        {
+            this.HandleMovement();
+        }
     }
 
     void HandleMovement()
@@ -71,7 +79,6 @@ public class PlayerMovementController : MonoBehaviour
             this.animator.SetInteger("WalkingDirection", PlayerAnimation.ANIMATION_IDLE);
             this.move = Vector2.zero;
         }
-
     }
 
     private void FixedUpdate()

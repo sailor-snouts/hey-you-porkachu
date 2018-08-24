@@ -9,6 +9,7 @@ public class DialogueManager : MonoBehaviour
     public TextMeshProUGUI nameText;
     public TextMeshProUGUI dialogueText;
     private Renderer rend;
+    private PlayerMovementController movement;
 
     private Queue<string> sentences;
     
@@ -26,7 +27,7 @@ public class DialogueManager : MonoBehaviour
             return;
         }
 
-        if (Input.anyKeyDown)
+        if (Input.GetButtonDown("Fire1"))
         {
             this.DisplayNextSentence();
         }
@@ -47,8 +48,10 @@ public class DialogueManager : MonoBehaviour
         rend.enabled = enabled;
     }
 
-    public void StartDialogue(Dialogue dialogue)
+    public void StartDialogue(Dialogue dialogue, PlayerMovementController movement)
     {
+        this.movement = movement;
+        this.movement.SetLocked(true);            
         this.setRenderers(true);
         this.nameText.text = dialogue.name;
         sentences.Clear();
@@ -89,5 +92,6 @@ public class DialogueManager : MonoBehaviour
         dialogueText.text = "";
         nameText.text = "";
         this.setRenderers(false);
+        this.movement.SetLocked(false);
     }
 }
