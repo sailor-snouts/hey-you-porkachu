@@ -22,8 +22,7 @@ public class PlayerActionUI : MonoBehaviour {
 
     void Update()
     {
-        this.DisplayTipIcon();
-        if(Input.GetButtonDown("Fire1"))
+        if(!this.movement.IsLocked() && this.movement.canLock() && Input.GetButtonDown("Fire1"))
         {
             this.TriggerAction();
         }
@@ -31,6 +30,7 @@ public class PlayerActionUI : MonoBehaviour {
 
     void FixedUpdate()
     {
+        this.DisplayTipIcon();
         this.actionable.Clear();
         Vector2 checkDirection;
         switch (this.movement.GetDirection())
@@ -73,7 +73,6 @@ public class PlayerActionUI : MonoBehaviour {
                     Debug.Log("Hey you Porkachu!");
                     break;
                 case "NPC":
-                    Debug.Log("starting dialogue");
                     DialogueTrigger dialogue = obj.GetComponent<DialogueTrigger>();
                     dialogue.TriggerDialogue(this.movement);
                     break;

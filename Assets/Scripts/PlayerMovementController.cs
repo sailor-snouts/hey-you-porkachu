@@ -22,6 +22,7 @@ public class PlayerMovementController : MonoBehaviour
     private Vector2 move;
     private int facing;
     private bool isLocked;
+    private float lockedCooldown = 0.1f;
 
     public int GetDirection()
     {
@@ -30,7 +31,31 @@ public class PlayerMovementController : MonoBehaviour
 
     public void SetLocked (bool locked)
     {
-        this.isLocked = locked;
+        Debug.Log("setting locked to: " + locked);
+        Debug.Log("cooldown is: " + this.lockedCooldown);
+
+        if(locked)
+        {
+            if(this.lockedCooldown <= 0)
+            {
+                this.isLocked = true;
+                this.lockedCooldown = 0.5f;
+            }
+        } else {
+            this.isLocked = false;
+        }
+        
+        Debug.Log("locked set to: " + locked);
+    }
+
+    public bool canLock()
+    {
+        return this.lockedCooldown <= 0;
+    }
+
+    public bool IsLocked()
+    {
+        return this.isLocked;
     }
 
     void Start()
@@ -43,6 +68,7 @@ public class PlayerMovementController : MonoBehaviour
     {
         if (!this.isLocked)
         {
+            this.lockedCooldown -= Time.deltaTime;
             this.HandleMovement();
         }
     }
