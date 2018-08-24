@@ -87,6 +87,12 @@ public class PlayerActionUI : MonoBehaviour {
                     Door door = obj.GetComponent<Door>();
                     door.TakeAction(this.movement, this.inventory);
                     break;
+                case "Menu":
+                    Debug.Log("Looking at a menu");
+                    inventory.AddKey(KeyType.RESTAURANT);
+                    dialogueQuestion = obj.GetComponent<DialogueQuestionTrigger>();
+                    dialogueQuestion.TriggerDialogue(this.movement);
+                    break;
                 default: 
                     break;
             }

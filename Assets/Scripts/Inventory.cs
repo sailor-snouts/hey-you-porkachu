@@ -16,7 +16,7 @@ public class Inventory : MonoBehaviour {
     }
 
     public void AddKey(int key) {
-        Key newKey = new Key();
+        Key newKey = ScriptableObject.CreateInstance<Key>();
         newKey.type = key;
         keys.Add(newKey);    
     }

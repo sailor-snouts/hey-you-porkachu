@@ -30,7 +30,11 @@ public class DialogueQuestionManager : MonoBehaviour
             return;
         }
 
-        // @TODO handle input
+        // @TODO handle input - Seriously this is temporary to test 
+        if (Input.GetButtonDown("Fire2"))
+        {
+            this.EndDialogue();
+        }
     }
 
     public bool isHavingDialogue()
