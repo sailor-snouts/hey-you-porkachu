@@ -15,8 +15,10 @@ public class Inventory : MonoBehaviour {
         keys = new List<Key>();
     }
 
-    public void AddKey(Key key) {
-        keys.Add(key);    
+    public void AddKey(int key) {
+        Key newKey = new Key();
+        newKey.type = key;
+        keys.Add(newKey);    
     }
 
     public bool HasKey(int keyType) {
