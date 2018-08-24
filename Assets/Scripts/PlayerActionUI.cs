@@ -76,6 +76,10 @@ public class PlayerActionUI : MonoBehaviour {
                     DialogueTrigger dialogue = obj.GetComponent<DialogueTrigger>();
                     dialogue.TriggerDialogue(this.movement);
                     break;
+                case "NPC2":
+                    DialogueQuestionTrigger dialogueQuestion = obj.GetComponent<DialogueQuestionTrigger>();
+                    dialogueQuestion.TriggerDialogue(this.movement);
+                    break;
                 default:
                     break;
             }

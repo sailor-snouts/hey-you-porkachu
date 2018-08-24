@@ -8,6 +8,7 @@ TagManager:
   - Porkachu
   - NPC
   - Door
+  - NPC2
   layers:
   - Default
   - TransparentFX
