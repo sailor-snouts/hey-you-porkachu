@@ -11,7 +11,7 @@ public class SplashVideo : MonoBehaviour
     [SerializeField]
     public string nextScene;
     private UnityEngine.Video.VideoPlayer video;
-    private AudioSource audioTrack;
+    //private AudioSource audioTrack;
 
     public void Update()
     {
@@ -24,7 +24,7 @@ public class SplashVideo : MonoBehaviour
     private void OnEnable()
     {
         video = GetComponent<VideoPlayer>();
-        audioTrack = GetComponent<AudioSource>();
+        //audioTrack = GetComponent<AudioSource>();
         video.loopPointReached += Video_loopPointReached;
     }
 

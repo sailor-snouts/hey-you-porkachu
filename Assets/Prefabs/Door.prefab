@@ -54,6 +54,7 @@ GameObject:
   - component: {fileID: 61194091742730814}
   - component: {fileID: 114716581698778878}
   - component: {fileID: 114037739803197540}
+  - component: {fileID: 114363062613060040}
   m_Layer: 0
   m_Name: Door
   m_TagString: Door
@@ -94,7 +95,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1821027636184662}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.53, y: 5.51, z: 0}
+  m_LocalPosition: {x: -3.47, y: 12.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4480530976931344}
@@ -138,6 +139,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6704a30fb021b45969439208f0ed773b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114363062613060040
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1821027636184662}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68c4914d1ebe107459acfcda0ab8b391, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    name: Backdoor
+    sentences:
+    - You need a key to open this door!
 --- !u!114 &114716581698778878
 MonoBehaviour:
   m_ObjectHideFlags: 1

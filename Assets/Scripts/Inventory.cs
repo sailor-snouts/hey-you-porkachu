@@ -9,4 +9,22 @@ public class Inventory : MonoBehaviour {
     public bool pork = false;
     public bool bun = false;
 
+    private List<Key> keys;
+
+    void Start() {
+        keys = new List<Key>();
+    }
+
+    public void AddKey(Key key) {
+        keys.Add(key);    
+    }
+
+    public bool HasKey(int keyType) {
+        foreach(Key key in keys) {
+            if (key.type == keyType)
+                return true;
+        }
+
+        return false;
+    }
 }

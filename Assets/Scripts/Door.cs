@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class Door : MonoBehaviour {
 
+    public int doorKey = KeyType.UNLOCKED;
+
     private SpriteRenderer open;
     private SpriteRenderer closed;
 
     private bool isOpen;
-    private bool isLocked;
 
 	void Start () {
         foreach ( SpriteRenderer doorSprite in GetComponentsInChildren<SpriteRenderer>() ) {
@@ -20,7 +21,6 @@ public class Door : MonoBehaviour {
         }
 
         isOpen = false;
-        isLocked = false;
 	}
 
     void Update () {
@@ -28,20 +28,24 @@ public class Door : MonoBehaviour {
         closed.enabled = !isOpen;
 	}
 
-    public bool IsLocked() {
-        return isLocked;
-    }
-
-    public bool IsOpen() {
-        return isOpen;
-    }
-
-    public void Open() {
-        SetOpenState(true);
-    }
-
-    public void Close() {
-        SetOpenState(false);
+    public void TakeAction(PlayerMovementController movementController, Inventory inventory) {
+        // Check for key
+        if( doorKey > KeyType.UNLOCKED) {
+            Debug.Log("Door is locked! Key type: " + doorKey);
+            if( inventory.HasKey(doorKey) ) {
+                // Unlock the door, change the door state
+                // TODO:  Play an unlock sfx
+                doorKey = KeyType.UNLOCKED;
+                SetOpenState(!isOpen);
+            } else {
+                Debug.Log("No key!  Attempting to display message");
+                DialogueTrigger dialogue = gameObject.GetComponent<DialogueTrigger>();
+                dialogue.TriggerDialogue(movementController);
+            }
+        } else {
+            // No lock, change the door state
+            SetOpenState(!isOpen);
+        }
     }
 
     private void SetOpenState(bool state) {

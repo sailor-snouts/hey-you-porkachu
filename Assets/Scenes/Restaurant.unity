@@ -1772,7 +1772,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1748262441
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 10
   m_Sprite: {fileID: 21300014, guid: 161dd6b23e54d504986bc032d579032a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -2029,7 +2029,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1748262441
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 10
   m_Sprite: {fileID: 21300004, guid: 161dd6b23e54d504986bc032d579032a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -2104,7 +2104,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1748262441
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 10
   m_Sprite: {fileID: 21300012, guid: 161dd6b23e54d504986bc032d579032a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -2254,7 +2254,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1748262441
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 10
   m_Sprite: {fileID: 21300002, guid: 161dd6b23e54d504986bc032d579032a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -2274,6 +2274,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114363062613060040, guid: 53e3b166f4d154e8abbae463ae31d1f2,
+        type: 2}
+      propertyPath: dialogue.sentences.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4906088822709150, guid: 53e3b166f4d154e8abbae463ae31d1f2, type: 2}
       propertyPath: m_LocalPosition.x
       value: 4.53
@@ -2305,6 +2310,21 @@ Prefab:
     - target: {fileID: 4906088822709150, guid: 53e3b166f4d154e8abbae463ae31d1f2, type: 2}
       propertyPath: m_RootOrder
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 114363062613060040, guid: 53e3b166f4d154e8abbae463ae31d1f2,
+        type: 2}
+      propertyPath: dialogue.sentences.Array.data[0]
+      value: You need a key to open this door!
+      objectReference: {fileID: 0}
+    - target: {fileID: 114363062613060040, guid: 53e3b166f4d154e8abbae463ae31d1f2,
+        type: 2}
+      propertyPath: dialogue.name
+      value: Kitchen
+      objectReference: {fileID: 0}
+    - target: {fileID: 114716581698778878, guid: 53e3b166f4d154e8abbae463ae31d1f2,
+        type: 2}
+      propertyPath: doorKey
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 53e3b166f4d154e8abbae463ae31d1f2, type: 2}
@@ -4581,7 +4601,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1748262441
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 6f9de51b7c2f3124ea18c1ac39281c52, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -4880,12 +4900,12 @@ Prefab:
     - target: {fileID: 224009387481554650, guid: 2b0134ccc902e364690575cb0201f2fe,
         type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 224108870839183990, guid: 2b0134ccc902e364690575cb0201f2fe,
         type: 2}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 224739698513424616, guid: 2b0134ccc902e364690575cb0201f2fe,
         type: 2}
@@ -4895,11 +4915,15 @@ Prefab:
     - target: {fileID: 224915076994435462, guid: 2b0134ccc902e364690575cb0201f2fe,
         type: 2}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 224784011250312722, guid: 2b0134ccc902e364690575cb0201f2fe,
         type: 2}
       propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1266176792660998, guid: 2b0134ccc902e364690575cb0201f2fe, type: 2}
+      propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -5039,11 +5063,6 @@ Prefab:
     - target: {fileID: 1821027636184662, guid: 53e3b166f4d154e8abbae463ae31d1f2, type: 2}
       propertyPath: m_Name
       value: Door (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 61194091742730814, guid: 53e3b166f4d154e8abbae463ae31d1f2,
-        type: 2}
-      propertyPath: m_Enabled
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 53e3b166f4d154e8abbae463ae31d1f2, type: 2}
@@ -8098,7 +8117,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1748262441
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 10
   m_Sprite: {fileID: 21300010, guid: 161dd6b23e54d504986bc032d579032a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -8439,7 +8458,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1748262441
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: -1
   m_Sprite: {fileID: 21300042, guid: 06f125d20b7c3405c86c9e263edcd2a5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -8558,6 +8577,16 @@ Prefab:
       value: Door (2)
       objectReference: {fileID: 0}
     - target: {fileID: 61194091742730814, guid: 53e3b166f4d154e8abbae463ae31d1f2,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114363062613060040, guid: 53e3b166f4d154e8abbae463ae31d1f2,
+        type: 2}
+      propertyPath: dialogue.name
+      value: Storage Door
+      objectReference: {fileID: 0}
+    - target: {fileID: 114716581698778878, guid: 53e3b166f4d154e8abbae463ae31d1f2,
         type: 2}
       propertyPath: m_Enabled
       value: 1
@@ -8702,7 +8731,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1748262441
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 10
   m_Sprite: {fileID: 21300016, guid: 161dd6b23e54d504986bc032d579032a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -8861,7 +8890,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1748262441
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 10
   m_Sprite: {fileID: 21300006, guid: 161dd6b23e54d504986bc032d579032a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -8936,7 +8965,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1748262441
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 10
   m_Sprite: {fileID: 21300008, guid: 161dd6b23e54d504986bc032d579032a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -9011,7 +9040,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1748262441
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300042, guid: 06f125d20b7c3405c86c9e263edcd2a5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

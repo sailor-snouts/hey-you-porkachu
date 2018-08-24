@@ -11,11 +11,14 @@ public class PlayerActionUI : MonoBehaviour {
     private Animator animator;
     private SpriteRenderer sprite;
     private List<GameObject> actionable;
+    private Inventory inventory;
 
     void Start()
     {
         this.movement = this.gameObject.GetComponentInParent<PlayerMovementController>();
         this.animator = this.gameObject.GetComponentInParent<Animator>();
+        this.inventory = this.gameObject.GetComponentInParent<Inventory>();
+
         this.sprite = this.gameObject.GetComponent<SpriteRenderer>();
         this.actionable = new List<GameObject>();
     }
@@ -80,7 +83,11 @@ public class PlayerActionUI : MonoBehaviour {
                     DialogueQuestionTrigger dialogueQuestion = obj.GetComponent<DialogueQuestionTrigger>();
                     dialogueQuestion.TriggerDialogue(this.movement);
                     break;
-                default:
+                case "Door":
+                    Door door = obj.GetComponent<Door>();
+                    door.TakeAction(this.movement, this.inventory);
+                    break;
+                default: 
                     break;
             }
         }
