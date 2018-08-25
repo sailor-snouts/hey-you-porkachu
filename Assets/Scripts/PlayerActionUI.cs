@@ -76,6 +76,7 @@ public class PlayerActionUI : MonoBehaviour {
                 case "NPC":
                 case "Tree":
                 case "Menu":
+                case "Wastebasket":
                     DialogueTrigger dialogue = obj.GetComponent<DialogueTrigger>();
                     dialogue.TriggerDialogue(this.movement);
                     break;
