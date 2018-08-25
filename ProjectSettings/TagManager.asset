@@ -10,6 +10,7 @@ TagManager:
   - Door
   - NPC2
   - Menu
+  - Tree
   layers:
   - Default
   - TransparentFX

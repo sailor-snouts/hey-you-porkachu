@@ -73,25 +73,21 @@ public class PlayerActionUI : MonoBehaviour {
                     Debug.Log("Interact with bun!");
                     break;
                 case "Porkachu":
-                    Debug.Log("Hey you Porkachu!");
-                    break;
                 case "NPC":
+                case "Tree":
+                case "Menu":
                     DialogueTrigger dialogue = obj.GetComponent<DialogueTrigger>();
                     dialogue.TriggerDialogue(this.movement);
                     break;
                 case "NPC2":
+                    // @TODO Move this add Key to an action post-dialogue
+                    inventory.AddKey(KeyType.RESTAURANT);
                     DialogueQuestionTrigger dialogueQuestion = obj.GetComponent<DialogueQuestionTrigger>();
                     dialogueQuestion.TriggerDialogue(this.movement);
                     break;
                 case "Door":
                     Door door = obj.GetComponent<Door>();
                     door.TakeAction(this.movement, this.inventory);
-                    break;
-                case "Menu":
-                    Debug.Log("Looking at a menu");
-                    inventory.AddKey(KeyType.RESTAURANT);
-                    dialogueQuestion = obj.GetComponent<DialogueQuestionTrigger>();
-                    dialogueQuestion.TriggerDialogue(this.movement);
                     break;
                 default: 
                     break;
