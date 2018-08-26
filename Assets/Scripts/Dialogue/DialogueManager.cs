@@ -13,12 +13,16 @@ public class DialogueManager : MonoBehaviour
     private PlayerMovementController movement;
     private Queue<string> sentences;
     private int scene;
-    
+    [SerializeField]
+    private AudioClip select;
+    private AudioSource audio;
+
     void Awake()
     {
         sentences = new Queue<string>();
         rend = GetComponent<Renderer>();
         this.setRenderers(false);
+        this.audio = gameObject.GetComponent<AudioSource>();
     }
 
     void Update()
@@ -72,6 +76,11 @@ public class DialogueManager : MonoBehaviour
 
     public void DisplayNextSentence()
     {
+        if (this.select != null)
+        {
+            this.audio.PlayOneShot(this.select);
+        }
+
         if (sentences.Count == 0)
         {
             EndDialogue();
