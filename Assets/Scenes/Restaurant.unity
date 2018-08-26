@@ -1882,10 +1882,12 @@ GameObject:
   - component: {fileID: 242062832}
   - component: {fileID: 242062831}
   - component: {fileID: 242062829}
+  - component: {fileID: 242062836}
+  - component: {fileID: 242062830}
   - component: {fileID: 242062828}
   m_Layer: 10
   m_Name: Maitre D
-  m_TagString: NPC2
+  m_TagString: Question
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1913,16 +1915,32 @@ MonoBehaviour:
   m_GameObject: {fileID: 242062827}
   m_Enabled: 1
   m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6eb183ab4c83a643b9f85876466e025, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentQuestion: 0
+  answer1count: 0
+  answer2count: 0
+  answer3count: 0
+  answer4count: 0
+--- !u!114 &242062830
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 242062827}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d6624e55a6dc44644bc053bb70520abd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   dialogue:
-    question: You are invited to a romantic dinner to eat your favorite food!
+    question: question 2
     answers:
-    - Gimme dumplings! - Default
-    - Ice Cream please!- School Girl
-    - I want spaghetti. - Dapper
-    - I want you, pikachu. - Pikachu
+    - 1
+    - 2
+    - 3
+    - 4
 --- !u!50 &242062831
 Rigidbody2D:
   serializedVersion: 4
@@ -2050,6 +2068,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &242062836
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 242062827}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6624e55a6dc44644bc053bb70520abd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    question: question 1
+    answers:
+    - 1
+    - 2
+    - 3
+    - 4
 --- !u!1001 &246409507
 Prefab:
   m_ObjectHideFlags: 0

@@ -81,11 +81,11 @@ public class PlayerActionUI : MonoBehaviour {
                     DialogueTrigger dialogue = obj.GetComponent<DialogueTrigger>();
                     dialogue.TriggerDialogue(this.movement);
                     break;
-                case "NPC2":
+                case "Question":
                     // @TODO Move this add Key to an action post-dialogue
                     inventory.AddKey(KeyType.RESTAURANT);
-                    DialogueQuestionTrigger dialogueQuestion = obj.GetComponent<DialogueQuestionTrigger>();
-                    dialogueQuestion.TriggerDialogue(this.movement);
+                    Questionaire dialogueQuestion = obj.GetComponent<Questionaire>();
+                    dialogueQuestion.Ask(this.movement, this.inventory);
                     break;
                 case "Door":
                     Door door = obj.GetComponent<Door>();

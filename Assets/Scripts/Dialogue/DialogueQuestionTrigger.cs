@@ -6,8 +6,13 @@ public class DialogueQuestionTrigger : MonoBehaviour
 {
     public DialogueQuestion dialogue;
 
-    public void TriggerDialogue(PlayerMovementController movement)
+    public void TriggerDialogue()
     {
-        FindObjectOfType<DialogueQuestionManager>().StartDialogue(this.dialogue, movement);
+        FindObjectOfType<DialogueQuestionManager>().StartDialogue(this.dialogue);
+    }
+
+    public int EndDialogue()
+    {
+        return FindObjectOfType<DialogueQuestionManager>().EndDialogue();
     }
 }

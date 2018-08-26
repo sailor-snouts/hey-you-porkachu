@@ -8,10 +8,10 @@ TagManager:
   - Porkachu
   - NPC
   - Door
-  - NPC2
   - Menu
   - Tree
   - Wastebasket
+  - Question
   layers:
   - Default
   - TransparentFX
