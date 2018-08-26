@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BunController : MonoBehaviour {
+public class BattleItemController : MonoBehaviour {
 
     // How quickly the bun is shrunk, or how 'fast' it appears to move away from the player.
     // The smaller this number, the slower the bun will shrink.

@@ -25,7 +25,7 @@ public class BattlePlayerController : MonoBehaviour {
     private void Move() {
         float controllerInput = Input.GetAxis("Horizontal");
         float movementAmount;
-        if(controllerInput >= Mathf.Epsilon) {
+        if(controllerInput != 0) {
             int dir = controllerInput > 0 ? 1 : -1;
             movementAmount = Mathf.Clamp(transform.position.x + speed * dir, this.minClamp, this.maxClamp);
 
