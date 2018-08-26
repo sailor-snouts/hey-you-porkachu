@@ -8380,9 +8380,26 @@ Prefab:
       propertyPath: m_isInputParsingRequired
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114118453238586426, guid: c3c3b95d47acb33409b89e2cb31e3ae3, type: 2}
   m_SourcePrefab: {fileID: 100100000, guid: c3c3b95d47acb33409b89e2cb31e3ae3, type: 2}
   m_IsPrefabAsset: 0
+--- !u!1 &1482166018 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1410964073928004, guid: c3c3b95d47acb33409b89e2cb31e3ae3,
+    type: 2}
+  m_PrefabInternal: {fileID: 1482166017}
+--- !u!114 &1482166019
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1482166018}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0fcce4aca439749c7a40460aa6b7f567, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1544780511
 GameObject:
   m_ObjectHideFlags: 0
@@ -8949,6 +8966,7 @@ GameObject:
   - component: {fileID: 1678865104}
   - component: {fileID: 1678865103}
   - component: {fileID: 1678865105}
+  - component: {fileID: 1678865106}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -8996,6 +9014,18 @@ MonoBehaviour:
   pork: 0
   bun: 0
   porkachuType: 0
+--- !u!114 &1678865106
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1678865102}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17c0e21eb09ee64499e43ba403ec63b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeLeft: 300
 --- !u!1 &1705786882 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1061790330050440, guid: 3c43db3c99ef84db8b65155e162bdd22,

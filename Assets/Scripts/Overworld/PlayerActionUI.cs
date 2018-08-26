@@ -84,8 +84,8 @@ public class PlayerActionUI : MonoBehaviour {
                     dialogue = obj.GetComponent<DialogueTrigger>();
                     dialogue.TriggerDialogue(this.movement);
                     // @TODO LOL testing launch battle nevermind me nothing to see here
-                    //GameManager manager = FindObjectOfType<GameManager>();
-                    //manager.LoadBattle();
+                    GameManager manager = FindObjectOfType<GameManager>();
+                    manager.LoadBattle();
                     break;
                 case "Question":
                     // @TODO Move this add Key to an action post-dialogue
