@@ -13,10 +13,19 @@ public class EnemyController : MonoBehaviour {
     float movementAmount;
     float destination;
     float destinationMargin = 0.3f;
+    private SpriteRenderer spriteR;
+    public Sprite guardedSprite;
+    public Sprite unguardedSprite;
+    private BoxCollider2D col;
+    
 
     // Use this for initialization
     void Start () {
         this.y = this.transform.position.y;
+        spriteR = GetComponent<SpriteRenderer>();
+        GetComponent<SpriteRenderer>().sprite = unguardedSprite;
+        Invoke("ToggleGuard", 2f);
+        col = GetComponent<BoxCollider2D>();
     }
 	
 	// Update is called once per frame
@@ -28,6 +37,19 @@ public class EnemyController : MonoBehaviour {
         CalculateMove();
         Move();
 	}
+
+    private void ToggleGuard() {
+        Sprite currentSprite = GetComponent<SpriteRenderer>().sprite;
+        if(currentSprite == guardedSprite) {
+            GetComponent<SpriteRenderer>().sprite = unguardedSprite;
+            col.enabled = true;
+        } else {
+            GetComponent<SpriteRenderer>().sprite = guardedSprite;
+            col.enabled = false;
+        }
+
+        Invoke("ToggleGuard", Random.Range(2, 3));
+    }
 
     private void CalculateMove() {
         int direction = Random.Range(-1, 2);
