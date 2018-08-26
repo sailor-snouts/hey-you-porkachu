@@ -15,6 +15,7 @@ TagManager:
   - Dough
   - ItemPickup
   - Chef
+  - Floor
   layers:
   - Default
   - TransparentFX
