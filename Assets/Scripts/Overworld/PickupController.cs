@@ -11,14 +11,14 @@ public class PickupController : MonoBehaviour {
     float animationSpeed = 2.0f;
 
     [SerializeField]
-    GameObject pickupSprite = null;
+    protected GameObject pickupSprite = null;
 
     [SerializeField]
-    int pickupType;
+    protected int pickupType;
 
 
-    private bool animating = false;
-    private float animationTime = 0.0f;
+    protected bool animating = false;
+    protected float animationTime = 0.0f;
 
     // Use this for initialization
     void Start () {
@@ -38,10 +38,18 @@ public class PickupController : MonoBehaviour {
         }
 	}
 
-    public void Pickup(Inventory inventory) {
+    public virtual void Pickup(Inventory inventory) {
+
+        DialogueTrigger[] dialogueTriggers = gameObject.GetComponents<DialogueTrigger>();
+        foreach (DialogueTrigger trigger in dialogueTriggers)
+        {
+            if (trigger.triggerId == 0)
+                trigger.TriggerDialogue(FindObjectOfType<PlayerMovementController>());
+        }
+
+
         pickupSprite.SetActive(true);
         animating = true;
-
         inventory.AddItem(pickupType);
     }
 }

@@ -19,7 +19,7 @@ public class Throw : MonoBehaviour {
     [SerializeField]
     private AudioClip sound;
     private AudioSource audio;
-
+    
     void Awake() {
         spriteR = itemPrefab.GetComponent<SpriteRenderer>();
         this.audio = gameObject.GetComponent<AudioSource>();
@@ -40,21 +40,22 @@ public class Throw : MonoBehaviour {
         }
         Vector2 targetPosition = new Vector2(transform.position.x, targetYPosition);
         Vector2 pos = new Vector2(targetPosition.x, startingHeight);
-        GameObject item = Instantiate(GetItemToThrow(), pos, Quaternion.identity);
+        GameObject item = GetItemToThrow(pos);
         item.GetComponent<BattleItemController>().setTargetPosition(targetPosition);
     }
 
-    private void SetRandomSprite() {
+    private void SetRandomSprite(GameObject item) {
         Sprite randomSprite = itemSprites[Random.Range(0, itemSprites.Count)];
-        spriteR.sprite = randomSprite;
+        item.GetComponent<SpriteRenderer>().sprite = randomSprite;
     }
 
-    private GameObject GetItemToThrow() {
+    private GameObject GetItemToThrow(Vector2 position) {
         if(throwBun) {
-            return bunPrefab;
+            return Instantiate(bunPrefab, position, Quaternion.identity);
         } else {
-            SetRandomSprite();
-            return itemPrefab;
+            GameObject itemInstance = Instantiate(itemPrefab, position, Quaternion.identity);
+            SetRandomSprite(itemInstance);
+            return itemInstance;
         }
     }
 }
