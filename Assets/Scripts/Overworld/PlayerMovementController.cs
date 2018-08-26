@@ -31,8 +31,8 @@ public class PlayerMovementController : MonoBehaviour
 
     public void SetLocked (bool locked)
     {
-        Debug.Log("setting locked to: " + locked);
-        Debug.Log("cooldown is: " + this.lockedCooldown);
+        //Debug.Log("setting locked to: " + locked);
+        //Debug.Log("cooldown is: " + this.lockedCooldown);
 
         if(locked)
         {
@@ -45,7 +45,7 @@ public class PlayerMovementController : MonoBehaviour
             this.isLocked = false;
         }
         
-        Debug.Log("locked set to: " + locked);
+        //Debug.Log("locked set to: " + locked);
     }
 
     public bool canLock()
@@ -104,7 +104,7 @@ public class PlayerMovementController : MonoBehaviour
             this.move = new Vector2(0, 1 * dir);
             if(this.animator.GetInteger("WalkingDirection") != this.facing)
             {
-                Debug.Log("changing animation");
+                //Debug.Log("changing animation");
                 this.animator.SetInteger("WalkingDirection", this.facing);
             }
         }

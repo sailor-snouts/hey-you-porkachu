@@ -59,6 +59,7 @@ public class DialogueManager : MonoBehaviour
 
     public void StartDialogue(Dialogue dialogue, PlayerMovementController movement)
     {
+        Debug.Log("Starting dialogue...");
         this.movement = movement;
         this.movement.SetLocked(true);            
         this.setRenderers(true);
@@ -100,7 +101,6 @@ public class DialogueManager : MonoBehaviour
 
         if(this.scene > 0)
         {
-            Debug.Log("Moving from Dialogue to scene " + this.scene);
             SceneManager.LoadScene(this.scene);
         }
     }

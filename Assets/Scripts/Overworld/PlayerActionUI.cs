@@ -71,12 +71,14 @@ public class PlayerActionUI : MonoBehaviour {
     {
         foreach (GameObject obj in this.actionable)
         {
+            Debug.Log("Logging interaction with " + obj.tag);
+
             switch (obj.tag)
             {
-                case "BunPickup":
-                    Debug.Log("Interact with bun!");
-                    break;
                 case "Porkachu":
+                    PorkachuController porkachu = obj.GetComponent<PorkachuController>();
+                    porkachu.Pickup(inventory);
+                    break;
                 case "NPC":
                 case "Tree":
                 case "Menu":

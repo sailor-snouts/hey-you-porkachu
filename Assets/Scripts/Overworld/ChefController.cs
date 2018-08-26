@@ -11,10 +11,7 @@ public class ChefController : MonoBehaviour {
     {
         GameManager manager = FindObjectOfType<GameManager>();
         if(manager.ChefDefeated(chefType)) {
-            Debug.Log("I've been defeated! " + chefType);
             Destroy(this.gameObject);
-        } else {
-            Debug.Log("No proof that I was defeated! " + chefType);
         }
 
         Initialize();

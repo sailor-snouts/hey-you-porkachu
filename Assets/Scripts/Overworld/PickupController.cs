@@ -40,11 +40,16 @@ public class PickupController : MonoBehaviour {
 
     public virtual void Pickup(Inventory inventory) {
 
+        Debug.Log("Trying to pick something up: " + pickupType);
+
         DialogueTrigger[] dialogueTriggers = gameObject.GetComponents<DialogueTrigger>();
         foreach (DialogueTrigger trigger in dialogueTriggers)
         {
+            Debug.Log("Dialog trigger ID: " + trigger.triggerId);
             if (trigger.triggerId == 0)
+            {
                 trigger.TriggerDialogue(FindObjectOfType<PlayerMovementController>());
+            }
         }
 
 

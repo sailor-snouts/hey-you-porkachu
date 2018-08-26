@@ -58,16 +58,13 @@ public class GameManager : MonoBehaviour
     public void LoadBattle(ChefController chef) 
     {
         // @TODO: Set the type based on the chef that was passed in?
-        Debug.Log("Adding " + chef.chefType + " as the current chef");
         currentChef = chef.chefType;
         SceneManager.LoadScene("Battle");
     }
 
     public void EndBattle(bool win) {
-        Debug.Log("END BATTLE!  Win? " + win);
 
         if (win) {
-            Debug.Log("Adding " + currentChef + " to the list of defeats!");
             defeatedChefs.Add(currentChef);
             SceneManager.LoadScene("Restaurant");
             //battleChef.EndEncounter();
@@ -89,8 +86,6 @@ public class GameManager : MonoBehaviour
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        Debug.Log("Scene loaded: " + scene.name);
-
         PlayerMovementController player = FindObjectOfType<PlayerMovementController>();
         if (player)
         {

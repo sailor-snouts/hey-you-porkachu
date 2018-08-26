@@ -2,13 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PigPickupController : PickupController
-{
+public class BunPickupController : PickupController {
+
     public override void Pickup(Inventory inventory)
     {
         GameManager manager = FindObjectOfType<GameManager>();
 
-        if( manager.ChefDefeated(3)) {
+        if (manager.ChefDefeated(4))
+        {
             pickupSprite.SetActive(true);
             animating = true;
             inventory.AddItem(pickupType);
@@ -20,12 +21,15 @@ public class PigPickupController : PickupController
                     trigger.TriggerDialogue(FindObjectOfType<PlayerMovementController>());
             }
         }
-        else {
+        else
+        {
             DialogueTrigger[] dialogueTriggers = gameObject.GetComponents<DialogueTrigger>();
-            foreach (DialogueTrigger trigger in dialogueTriggers ) {
-                if(trigger.triggerId == 0)
+            foreach (DialogueTrigger trigger in dialogueTriggers)
+            {
+                if (trigger.triggerId == 0)
                     trigger.TriggerDialogue(FindObjectOfType<PlayerMovementController>());
             }
         }
     }
+
 }
