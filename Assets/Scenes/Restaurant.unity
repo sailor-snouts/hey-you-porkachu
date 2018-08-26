@@ -1897,7 +1897,7 @@ MonoBehaviour:
     question: "You enter a forest and hear the roar of a bear! What do you do?\r\n"
     answers:
     - 'I climb the nearest tree! '
-    - '2I quickly bury my sandwiches! '
+    - 'I quickly bury my sandwiches! '
     - 'ROAR! '
     - 'I invite the bear for tea. '
 --- !u!50 &242062831
@@ -2059,10 +2059,10 @@ MonoBehaviour:
   dialogue:
     question: "Your friend\u2019s leg is caught in a beartrap!\r"
     answers:
-    - 'They better have gotten caught - I set that weeks ago. '
+    - 'Good! I set that weeks ago. '
     - 'Oh no! Time to cry. '
-    - 'I rip the trap open to free them with my massive strength! '
-    - 'I disassemble the trap carefully while they bleed on my hands. '
+    - 'I free them with my massive strength! '
+    - 'I take it apart while they bleed on me. '
 --- !u!114 &242062838
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2095,10 +2095,10 @@ MonoBehaviour:
   dialogue:
     question: "What kind of heart do you have?\r"
     answers:
-    - Fire!
-    - Pink!
-    - Black!
-    - depends on how I feel
+    - 'I am warm - likely on fire right now. '
+    - 'Pink and fleshy! '
+    - 'I am empty with a cold, rock solid core. '
+    - 'I have 6 hearts in jars by my desk. '
 --- !u!114 &242062840
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2114,7 +2114,7 @@ MonoBehaviour:
     question: "You have a dozen apples, but only two pockets. How do you solve this?\r"
     answers:
     - "I can\u2019t hold this many apples!"
-    - 'I make a dozen friends. '
+    - I give out apples to make friends.
     - 'I eat ten apples. '
     - 'I plant the apples. '
 --- !u!114 &242062841
@@ -2133,7 +2133,7 @@ MonoBehaviour:
     answers:
     - 'Season 4 '
     - Summertime!
-    - 'When meat grows best. '
+    - The season where the meat grows best.
     - Cayenne
 --- !u!1001 &246409507
 Prefab:
