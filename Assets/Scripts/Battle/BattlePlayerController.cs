@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class BattlePlayerController : MonoBehaviour {
-    Rigidbody2D rigidBody;
     private float y;
 
     [SerializeField]
