@@ -8,6 +8,7 @@ public class Inventory : MonoBehaviour {
     public bool dough = false;
     public bool pork = false;
     public bool bun = false;
+    public int porkachuType = 0;
 
     private List<Key> keys;
 

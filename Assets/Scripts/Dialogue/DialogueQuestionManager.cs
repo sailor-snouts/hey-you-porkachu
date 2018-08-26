@@ -14,7 +14,6 @@ public class DialogueQuestionManager : MonoBehaviour
     public TextMeshProUGUI answer3;
     public TextMeshProUGUI answer4;
     private Renderer rend;
-    private PlayerMovementController movement;
     private bool canChangeSelection = true;
     private int currentSelection = 1;
 
@@ -33,12 +32,7 @@ public class DialogueQuestionManager : MonoBehaviour
         {
             return;
         }
-
-        // @TODO handle input - Seriously this is temporary to test 
-        if (Input.GetButtonDown("Fire2"))
-        {
-            this.EndDialogue();
-        }
+        
         float vertical = Input.GetAxis("Vertical");
         if (this.canChangeSelection && Mathf.Abs(vertical) > 0f)
         {
@@ -95,10 +89,8 @@ public class DialogueQuestionManager : MonoBehaviour
 
     }
 
-    public void StartDialogue(DialogueQuestion dialogue, PlayerMovementController movement)
+    public void StartDialogue(DialogueQuestion dialogue)
     {
-        this.movement = movement;
-        this.movement.SetLocked(true);
         this.setRenderers(true);
         this.sentences.Clear();
         this.question.text = dialogue.question;
@@ -108,7 +100,7 @@ public class DialogueQuestionManager : MonoBehaviour
         this.answer4.text = dialogue.answers[3];
     }
 
-    void EndDialogue()
+    public int EndDialogue()
     {
         this.question.text = "";
         this.answer1.text = "";
@@ -116,6 +108,6 @@ public class DialogueQuestionManager : MonoBehaviour
         this.answer3.text = "";
         this.answer4.text = "";
         this.setRenderers(false);
-        this.movement.SetLocked(false);
+        return this.currentSelection;
     }
 }
