@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyMovementController : MonoBehaviour {
+public class EnemyController : MonoBehaviour {
 
     [SerializeField, Range(0.07f, 0.2f)]
     private float speed = 0.1f;
@@ -42,5 +42,14 @@ public class EnemyMovementController : MonoBehaviour {
         }
         moving = true;
         transform.position = new Vector2(Mathf.SmoothStep(transform.position.x, destination, speed), this.y);         
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision) {
+        Destroy(gameObject);
+        Destroy(collision.gameObject);
+
+        // @TODO WHOA THIS IS GROSS
+        // @TODO Head back to the Restaurant.  You won!
+        // SceneManager.LoadScene(3);
     }
 }
