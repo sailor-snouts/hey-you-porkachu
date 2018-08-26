@@ -155,11 +155,6 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3c43db3c99ef84db8b65155e162bdd22, type: 2}
   m_IsPrefabAsset: 0
---- !u!4 &62857756 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4287607028516968, guid: a111f87aac6354b7fbe867a14c5c2535,
-    type: 2}
-  m_PrefabInternal: {fileID: 1139969065}
 --- !u!1 &75938273
 GameObject:
   m_ObjectHideFlags: 0
@@ -1918,11 +1913,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6eb183ab4c83a643b9f85876466e025, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentQuestion: 0
-  answer1count: 0
-  answer2count: 0
-  answer3count: 0
-  answer4count: 0
 --- !u!114 &242062830
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5924,7 +5914,8 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114233514294515324, guid: a111f87aac6354b7fbe867a14c5c2535, type: 2}
   m_SourcePrefab: {fileID: 100100000, guid: a111f87aac6354b7fbe867a14c5c2535, type: 2}
   m_IsPrefabAsset: 0
 --- !u!1 &1158640863
@@ -9685,7 +9676,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 236904152243d4e918ae7dd3051dc62f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerTransform: {fileID: 62857756}
 --- !u!4 &1678865104
 Transform:
   m_ObjectHideFlags: 0
@@ -9714,6 +9704,7 @@ MonoBehaviour:
   dough: 0
   pork: 0
   bun: 0
+  porkachuType: 0
 --- !u!1 &1705786882 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1061790330050440, guid: 3c43db3c99ef84db8b65155e162bdd22,

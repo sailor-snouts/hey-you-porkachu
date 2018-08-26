@@ -18,7 +18,7 @@ public class PlayerActionUI : MonoBehaviour {
     {
         this.movement = this.gameObject.GetComponentInParent<PlayerMovementController>();
         this.animator = this.gameObject.GetComponentInParent<Animator>();
-        this.inventory = this.gameObject.GetComponentInParent<Inventory>();
+        this.inventory = FindObjectOfType<Inventory>();
 
         this.sprite = this.gameObject.GetComponent<SpriteRenderer>();
         this.actionable = new List<GameObject>();
