@@ -16,9 +16,13 @@ public class Throw : MonoBehaviour {
     private float targetYPosition = 3.5f;
     //This state should be fetched from the game manager or something, just here for testing
     private bool throwBun = false;
+    [SerializeField]
+    private AudioClip sound;
+    private AudioSource audio;
 
-    void Start() {
+    void Awake() {
         spriteR = itemPrefab.GetComponent<SpriteRenderer>();
+        this.audio = gameObject.GetComponent<AudioSource>();
     }
 
     void Update() {
@@ -28,7 +32,12 @@ public class Throw : MonoBehaviour {
         }
     }
 
-    private void ThrowItem() {
+    private void ThrowItem()
+    {
+        if (this.sound != null)
+        {
+            this.audio.PlayOneShot(this.sound);
+        }
         Vector2 targetPosition = new Vector2(transform.position.x, targetYPosition);
         Vector2 pos = new Vector2(targetPosition.x, startingHeight);
         GameObject item = Instantiate(GetItemToThrow(), pos, Quaternion.identity);
