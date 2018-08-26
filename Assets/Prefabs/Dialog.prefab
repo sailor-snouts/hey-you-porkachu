@@ -70,7 +70,7 @@ Transform:
   m_GameObject: {fileID: 1620282089508022}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: -300, z: 0}
-  m_LocalScale: {x: 62, y: 108.076035, z: 11669.867}
+  m_LocalScale: {x: 100, y: 100, z: 11669.867}
   m_Children:
   - {fileID: 224719765914935438}
   - {fileID: 224791217907873230}
@@ -96,7 +96,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: 
+  m_text: mesage
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1cc1f1a5b29804c408730a4255e7c3ce, type: 2}
   m_sharedMaterial: {fileID: 21045090235893744, guid: 1cc1f1a5b29804c408730a4255e7c3ce,
@@ -124,8 +124,8 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 32
-  m_fontSizeBase: 32
+  m_fontSize: 26
+  m_fontSizeBase: 26
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -162,16 +162,16 @@ MonoBehaviour:
   m_firstVisibleCharacter: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 164.92613, y: 46.224606, z: 158.39445, w: 57.152588}
   m_textInfo:
     textComponent: {fileID: 114055486216559310}
-    characterCount: 0
+    characterCount: 6
     spriteCount: 0
     spaceCount: 0
-    wordCount: 0
+    wordCount: 1
     linkCount: 0
-    lineCount: 0
-    pageCount: 0
+    lineCount: 1
+    pageCount: 1
     materialCount: 1
   m_havePropertiesChanged: 0
   m_isUsingLegacyAnimationComponent: 0
@@ -210,7 +210,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: 
+  m_text: name
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1cc1f1a5b29804c408730a4255e7c3ce, type: 2}
   m_sharedMaterial: {fileID: 21045090235893744, guid: 1cc1f1a5b29804c408730a4255e7c3ce,
@@ -238,8 +238,8 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 48
-  m_fontSizeBase: 48
+  m_fontSize: 30
+  m_fontSizeBase: 30
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -276,16 +276,16 @@ MonoBehaviour:
   m_firstVisibleCharacter: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 0, y: 0, z: -615.54126, w: 18.58841}
   m_textInfo:
     textComponent: {fileID: 114278204776719186}
-    characterCount: 0
+    characterCount: 4
     spriteCount: 0
     spaceCount: 0
-    wordCount: 0
+    wordCount: 1
     linkCount: 0
-    lineCount: 0
-    pageCount: 0
+    lineCount: 1
+    pageCount: 1
     materialCount: 1
   m_havePropertiesChanged: 0
   m_isUsingLegacyAnimationComponent: 0
@@ -351,14 +351,14 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1748262441
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: d6205ae5b4f43d3469ad6ac4577377ca, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a0e2f45685636fa4c8be04ed7d452a41, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 14.9, y: 4.6}
+  m_Size: {x: 11.2, y: 2.88}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -393,7 +393,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -4.414, y: 1.467}
+  m_AnchoredPosition: {x: -2.89, y: 0.87}
   m_SizeDelta: {x: 525.371, y: 55.005}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224791217907873230

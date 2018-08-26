@@ -31,6 +31,10 @@ public class DialogueManager : MonoBehaviour
         {
             this.DisplayNextSentence();
         }
+        if (Input.GetButton("Fire2"))
+        {
+            this.EndDialogue();
+        }
     }
 
     public bool isHavingDialogue()
@@ -73,18 +77,7 @@ public class DialogueManager : MonoBehaviour
         }
 
         string sentence = sentences.Dequeue();
-        StopAllCoroutines();
-        StartCoroutine(TypeSentence(sentence));
-    }
-
-    IEnumerator TypeSentence(string sentence)
-    {
-        dialogueText.text = "";
-        foreach (char letter in sentence.ToCharArray())
-        {
-            dialogueText.text += letter;
-            yield return null;
-        }
+        dialogueText.text = sentence;
     }
 
     void EndDialogue()
