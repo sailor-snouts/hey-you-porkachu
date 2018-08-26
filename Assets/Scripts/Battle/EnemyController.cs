@@ -67,11 +67,15 @@ public class EnemyController : MonoBehaviour {
     }
 
     private void OnCollisionEnter2D(Collision2D collision) {
+        // @TODO Make this a calculation of HP etc and move this code to after
         Destroy(gameObject);
         Destroy(collision.gameObject);
 
-        // @TODO WHOA THIS IS GROSS
+        // @TODO Move this to HP calculation
         // @TODO Head back to the Restaurant.  You won!
-        // SceneManager.LoadScene(3);
+        GameManager gameManager = FindObjectOfType<GameManager>();
+        if(gameManager) {
+            gameManager.EndBattle(true);
+        }
     }
 }
