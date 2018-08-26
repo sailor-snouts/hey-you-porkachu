@@ -8,7 +8,7 @@ public class InventoryUIController : MonoBehaviour {
     public SpriteRenderer onion;
     public SpriteRenderer pork;
     public SpriteRenderer bun;
-    public Inventory inventory;
+    private Inventory inventory;
 
     private void Start()
     {

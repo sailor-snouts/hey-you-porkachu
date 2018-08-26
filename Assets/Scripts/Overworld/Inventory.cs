@@ -6,8 +6,8 @@ public class Inventory : MonoBehaviour {
 
     public int porkachuType = 0;
 
-    private List<Item> items;
-    private List<Key> keys;
+    public List<Item> items;
+    public List<Key> keys;
 
     void Start() {
         keys = new List<Key>();

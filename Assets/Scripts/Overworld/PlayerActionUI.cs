@@ -99,8 +99,7 @@ public class PlayerActionUI : MonoBehaviour {
                     break;
                 case "Chef":
                     ChefController chef = obj.GetComponent<ChefController>();
-                    GameManager manager = FindObjectOfType<GameManager>();
-                    manager.LoadBattle(chef);
+                    chef.StartEncounter();
                     break;
                 default: 
                     break;

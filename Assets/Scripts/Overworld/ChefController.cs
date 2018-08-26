@@ -11,13 +11,24 @@ public class ChefController : MonoBehaviour {
     {
         GameManager manager = FindObjectOfType<GameManager>();
         if(manager.ChefDefeated(chefType)) {
+            Debug.Log("I've been defeated! " + chefType);
             Destroy(this.gameObject);
+        } else {
+            Debug.Log("No proof that I was defeated! " + chefType);
         }
+
+        Initialize();
     }
 
-    public void StartEncounter() {
+    public virtual void Initialize() {
+
+    }
+
+    public virtual void StartEncounter() {
         GameManager manager = FindObjectOfType<GameManager>();
-        manager.LoadBattle(this);
+        manager.currentChef = chefType;
+        DialogueTrigger battle = gameObject.GetComponent<DialogueTrigger>();
+        battle.TriggerDialogue(FindObjectOfType<PlayerMovementController>());
     }
 
     public void EndEncounter() {
