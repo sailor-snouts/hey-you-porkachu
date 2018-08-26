@@ -58,6 +58,10 @@ public class PlayerMovementController : MonoBehaviour
         return this.isLocked;
     }
 
+    private void Awake()
+    {
+        r2bd = this.GetComponent<Rigidbody2D>();
+    }
     void Start()
     {
         animator = this.GetComponent<Animator>();
@@ -110,5 +114,13 @@ public class PlayerMovementController : MonoBehaviour
     private void FixedUpdate()
     {
         this.r2bd.velocity = this.move * this.speed;
+    }
+
+    public void MovePlayer(Vector2 pos) {
+        this.r2bd.MovePosition(pos);
+    }
+
+    public Vector2 PlayerPosition() {
+        return this.r2bd.transform.position;
     }
 }
