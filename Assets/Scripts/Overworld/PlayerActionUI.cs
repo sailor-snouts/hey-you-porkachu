@@ -60,7 +60,10 @@ public class PlayerActionUI : MonoBehaviour {
         foreach (RaycastHit2D col in hitColliders)
         {
             GameObject obj = col.transform.gameObject;
-            this.actionable.Add(obj);
+            if (obj.GetComponent<Actionable>() || obj.GetComponent<DialogueTrigger>() || obj.GetComponent<Questionaire>() || obj.GetComponent<ChefController>())
+            {
+                this.actionable.Add(obj);
+            }
         }
     }
 
@@ -110,16 +113,6 @@ public class PlayerActionUI : MonoBehaviour {
 
     void DisplayTipIcon()
     {
-        Collider2D[] hitColliders = Physics2D.OverlapCircleAll(this.transform.position, this.iconCheckRadius);
-        bool isShowingIcon = false;
-        foreach (Collider2D col in hitColliders)
-        {
-            if(col.gameObject.GetComponent<Actionable>())
-            {
-                isShowingIcon = true;
-                break;
-            }
-        }
-        this.sprite.enabled = isShowingIcon;
+        this.sprite.enabled = this.actionable.Count > 0;
     }
 }
