@@ -9,7 +9,7 @@ public class GameManager : MonoBehaviour
     private static GameManager m_instance;
 
     Vector2 playerPos;
-    int currentChef = -1;
+    public int currentChef = -1;
     List<int> defeatedChefs;
 
 
@@ -58,12 +58,16 @@ public class GameManager : MonoBehaviour
     public void LoadBattle(ChefController chef) 
     {
         // @TODO: Set the type based on the chef that was passed in?
+        Debug.Log("Adding " + chef.chefType + " as the current chef");
         currentChef = chef.chefType;
         SceneManager.LoadScene("Battle");
     }
 
     public void EndBattle(bool win) {
-        if(win) {
+        Debug.Log("END BATTLE!  Win? " + win);
+
+        if (win) {
+            Debug.Log("Adding " + currentChef + " to the list of defeats!");
             defeatedChefs.Add(currentChef);
             SceneManager.LoadScene("Restaurant");
             //battleChef.EndEncounter();

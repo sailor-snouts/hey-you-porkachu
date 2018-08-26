@@ -156,6 +156,7 @@ GameObject:
   - component: {fileID: 224745685144452060}
   - component: {fileID: 222733683985300392}
   - component: {fileID: 114154131630795672}
+  - component: {fileID: 114931980011558120}
   - component: {fileID: 114691677305978522}
   m_Layer: 0
   m_Name: Timer Text
@@ -1496,7 +1497,6 @@ MonoBehaviour:
   onion: {fileID: 212398597426145896}
   pork: {fileID: 212312732790725628}
   bun: {fileID: 212735851337956248}
-  inventory: {fileID: 0}
 --- !u!114 &114660283971579194
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1646,7 +1646,7 @@ MonoBehaviour:
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!114 &114691677305978522
 MonoBehaviour:
-  m_ObjectHideFlags: 1
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1410964073928004}
@@ -1825,6 +1825,17 @@ MonoBehaviour:
   - {fileID: 0}
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &114931980011558120
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1410964073928004}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0fcce4aca439749c7a40460aa6b7f567, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114951923507954302
 MonoBehaviour:
   m_ObjectHideFlags: 1

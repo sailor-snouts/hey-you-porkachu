@@ -1700,6 +1700,40 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 53e3b166f4d154e8abbae463ae31d1f2, type: 2}
   m_IsPrefabAsset: 0
+--- !u!1 &140578384 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1254003719330800, guid: 8e5821c1e3ea646ce8eccd2747288ad9,
+    type: 2}
+  m_PrefabInternal: {fileID: 597890391}
+--- !u!114 &140578385
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 140578384}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bb4f4016713a42b4919aada29f14e61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chefType: 3
+--- !u!114 &140578386
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 140578384}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68c4914d1ebe107459acfcda0ab8b391, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    name: Chef
+    sentences:
+    - "P-pork? Please\u2026 No, don\u2019t do this. I swear, Pig! I will protect you!"
+    scene: 4
+  triggerId: 1
 --- !u!4 &140578392 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4126284671592092, guid: 8e5821c1e3ea646ce8eccd2747288ad9,
@@ -2511,6 +2545,11 @@ Prefab:
       propertyPath: chefType
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114225726697694942, guid: 8e5821c1e3ea646ce8eccd2747288ad9,
+        type: 2}
+      propertyPath: dialogue.scene
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8e5821c1e3ea646ce8eccd2747288ad9, type: 2}
   m_IsPrefabAsset: 0
@@ -2686,15 +2725,20 @@ Prefab:
     - target: {fileID: 114225726697694942, guid: 8e5821c1e3ea646ce8eccd2747288ad9,
         type: 2}
       propertyPath: dialogue.sentences.Array.data[0]
-      value: "P-pork? Please\u2026 No, don\u2019t do this. I swear, Pig! I will protect
-        you!"
+      value: Hey, beat it!  You shouldn't be back here!
       objectReference: {fileID: 0}
     - target: {fileID: 114398959283787794, guid: 8e5821c1e3ea646ce8eccd2747288ad9,
         type: 2}
       propertyPath: chefType
       value: 3
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 114225726697694942, guid: 8e5821c1e3ea646ce8eccd2747288ad9,
+        type: 2}
+      propertyPath: dialogue.scene
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 114398959283787794, guid: 8e5821c1e3ea646ce8eccd2747288ad9, type: 2}
   m_SourcePrefab: {fileID: 100100000, guid: 8e5821c1e3ea646ce8eccd2747288ad9, type: 2}
   m_IsPrefabAsset: 0
 --- !u!1 &625384559
@@ -8457,6 +8501,11 @@ Prefab:
       propertyPath: chefType
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 114225726697694942, guid: 8e5821c1e3ea646ce8eccd2747288ad9,
+        type: 2}
+      propertyPath: dialogue.scene
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8e5821c1e3ea646ce8eccd2747288ad9, type: 2}
   m_IsPrefabAsset: 0
@@ -8680,12 +8729,42 @@ Prefab:
       propertyPath: m_isInputParsingRequired
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 114671327649077290, guid: c3c3b95d47acb33409b89e2cb31e3ae3,
+    - target: {fileID: 114269890750536620, guid: c3c3b95d47acb33409b89e2cb31e3ae3,
+        type: 2}
+      propertyPath: m_havePropertiesChanged
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114269890750536620, guid: c3c3b95d47acb33409b89e2cb31e3ae3,
+        type: 2}
+      propertyPath: m_isInputParsingRequired
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114276172467324404, guid: c3c3b95d47acb33409b89e2cb31e3ae3,
+        type: 2}
+      propertyPath: m_havePropertiesChanged
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114276172467324404, guid: c3c3b95d47acb33409b89e2cb31e3ae3,
+        type: 2}
+      propertyPath: m_isInputParsingRequired
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114625658299397816, guid: c3c3b95d47acb33409b89e2cb31e3ae3,
         type: 2}
       propertyPath: m_havePropertiesChanged
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114671327649077290, guid: c3c3b95d47acb33409b89e2cb31e3ae3,
+        type: 2}
+      propertyPath: m_isInputParsingRequired
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114987926254236266, guid: c3c3b95d47acb33409b89e2cb31e3ae3,
+        type: 2}
+      propertyPath: m_havePropertiesChanged
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114987926254236266, guid: c3c3b95d47acb33409b89e2cb31e3ae3,
         type: 2}
       propertyPath: m_isInputParsingRequired
       value: 1
@@ -8710,16 +8789,6 @@ Prefab:
       propertyPath: m_isInputParsingRequired
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 114987926254236266, guid: c3c3b95d47acb33409b89e2cb31e3ae3,
-        type: 2}
-      propertyPath: m_havePropertiesChanged
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114987926254236266, guid: c3c3b95d47acb33409b89e2cb31e3ae3,
-        type: 2}
-      propertyPath: m_isInputParsingRequired
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 114391881287580050, guid: c3c3b95d47acb33409b89e2cb31e3ae3,
         type: 2}
       propertyPath: m_havePropertiesChanged
@@ -8730,15 +8799,25 @@ Prefab:
       propertyPath: m_isInputParsingRequired
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 114276172467324404, guid: c3c3b95d47acb33409b89e2cb31e3ae3,
+    - target: {fileID: 212751994625234404, guid: c3c3b95d47acb33409b89e2cb31e3ae3,
         type: 2}
-      propertyPath: m_havePropertiesChanged
-      value: 1
+      propertyPath: m_SortingOrder
+      value: 11
       objectReference: {fileID: 0}
-    - target: {fileID: 114276172467324404, guid: c3c3b95d47acb33409b89e2cb31e3ae3,
+    - target: {fileID: 212398597426145896, guid: c3c3b95d47acb33409b89e2cb31e3ae3,
         type: 2}
-      propertyPath: m_isInputParsingRequired
-      value: 1
+      propertyPath: m_SortingOrder
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 212312732790725628, guid: c3c3b95d47acb33409b89e2cb31e3ae3,
+        type: 2}
+      propertyPath: m_SortingOrder
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 212735851337956248, guid: c3c3b95d47acb33409b89e2cb31e3ae3,
+        type: 2}
+      propertyPath: m_SortingOrder
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 114269890750536620, guid: c3c3b95d47acb33409b89e2cb31e3ae3,
         type: 2}
@@ -8748,6 +8827,11 @@ Prefab:
     - target: {fileID: 114269890750536620, guid: c3c3b95d47acb33409b89e2cb31e3ae3,
         type: 2}
       propertyPath: m_isInputParsingRequired
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114671327649077290, guid: c3c3b95d47acb33409b89e2cb31e3ae3,
+        type: 2}
+      propertyPath: m_havePropertiesChanged
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -9069,6 +9153,7 @@ MonoBehaviour:
     sentences:
     - You find Onions!
     scene: 0
+  triggerId: 0
 --- !u!114 &1550174723
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9169,6 +9254,7 @@ MonoBehaviour:
     sentences:
     - You find Pork!
     scene: 0
+  triggerId: 0
 --- !u!114 &1624718999
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9542,6 +9628,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 236904152243d4e918ae7dd3051dc62f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentChef: -1
 --- !u!4 &1678865104
 Transform:
   m_ObjectHideFlags: 0
@@ -9567,6 +9654,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   porkachuType: 0
+  items: []
+  keys: []
 --- !u!114 &1678865106
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9600,6 +9689,7 @@ MonoBehaviour:
     sentences:
     - FEED ME STEAMED BUNS!
     scene: 0
+  triggerId: 0
 --- !u!1001 &1735024480
 Prefab:
   m_ObjectHideFlags: 0
@@ -9646,14 +9736,25 @@ Prefab:
     - target: {fileID: 114398959283787794, guid: 8e5821c1e3ea646ce8eccd2747288ad9,
         type: 2}
       propertyPath: chefType
-      value: 4
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114225726697694942, guid: 8e5821c1e3ea646ce8eccd2747288ad9,
         type: 2}
       propertyPath: dialogue.sentences.Array.data[0]
       value: What? You want to cook? You're after my JOB? I'll never let that happen!
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 114225726697694942, guid: 8e5821c1e3ea646ce8eccd2747288ad9,
+        type: 2}
+      propertyPath: dialogue.scene
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114225726697694942, guid: 8e5821c1e3ea646ce8eccd2747288ad9,
+        type: 2}
+      propertyPath: triggerId
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 114398959283787794, guid: 8e5821c1e3ea646ce8eccd2747288ad9, type: 2}
   m_SourcePrefab: {fileID: 100100000, guid: 8e5821c1e3ea646ce8eccd2747288ad9, type: 2}
   m_IsPrefabAsset: 0
 --- !u!1 &1744426203
@@ -9691,6 +9792,7 @@ MonoBehaviour:
     sentences:
     - You find Dough!
     scene: 0
+  triggerId: 0
 --- !u!114 &1744426205
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9960,6 +10062,40 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4126284671592092, guid: 8e5821c1e3ea646ce8eccd2747288ad9,
     type: 2}
   m_PrefabInternal: {fileID: 1735024480}
+--- !u!1 &2035197990 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1254003719330800, guid: 8e5821c1e3ea646ce8eccd2747288ad9,
+    type: 2}
+  m_PrefabInternal: {fileID: 1735024480}
+--- !u!114 &2035197991
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2035197990}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac46d1c0c402a4c8ea1a235360d1c1f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chefType: 4
+--- !u!114 &2035197992
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2035197990}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68c4914d1ebe107459acfcda0ab8b391, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    name: Chef
+    sentences:
+    - Go on, scram! You aren't worthy to cook in my kitchen!
+    scene: 0
+  triggerId: 0
 --- !u!1 &2083679013
 GameObject:
   m_ObjectHideFlags: 0
