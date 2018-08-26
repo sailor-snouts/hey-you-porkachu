@@ -58,7 +58,6 @@ GameObject:
   - component: {fileID: 114777279867132526}
   - component: {fileID: 61703227916150870}
   - component: {fileID: 50606006107132496}
-  - component: {fileID: 114233514294515324}
   m_Layer: 10
   m_Name: Player
   m_TagString: Player
@@ -73,7 +72,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1898757045595226}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -8, z: 0}
+  m_LocalPosition: {x: 0, y: -8.83, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 2}
   m_Children:
   - {fileID: 4889119173307326}
@@ -217,21 +216,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &114233514294515324
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1898757045595226}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2cc65a2b8179d45819363f2f13699d9f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  onion: 0
-  dough: 0
-  pork: 0
-  bun: 0
 --- !u!114 &114436426875865074
 MonoBehaviour:
   m_ObjectHideFlags: 1
