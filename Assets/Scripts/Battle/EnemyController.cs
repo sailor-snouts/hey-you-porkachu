@@ -44,10 +44,10 @@ public class EnemyController : MonoBehaviour {
     private void ToggleGuard() {
         Sprite currentSprite = GetComponent<SpriteRenderer>().sprite;
         if(currentSprite == guardedSprite) {
-            GetComponent<SpriteRenderer>().sprite = unguardedSprite;
+            spriteR.sprite = unguardedSprite;
             col.enabled = true;
         } else {
-            GetComponent<SpriteRenderer>().sprite = guardedSprite;
+            spriteR.sprite = guardedSprite;
             col.enabled = false;
         }
 
