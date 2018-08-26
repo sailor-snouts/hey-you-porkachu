@@ -24,8 +24,7 @@ public class HealthBar : MonoBehaviour
         {
             this.healthFrame.enabled = true;
             this.loveFrame.enabled = false;
-        } else
-        {
+        } else {
             this.loveFrame.enabled = true;
             this.healthFrame.enabled = false;
         }
@@ -47,13 +46,13 @@ public class HealthBar : MonoBehaviour
         {
             dmg *= -1;
         }
-        this.health = Mathf.Clamp(this.health - dmg, 0, this.maxHealth);
+        this.health -= dmg;
         this.UpdateMask();
     }
 
     private void UpdateMask()
     {
-        float percent = 1f - (float) this.health / (float) this.maxHealth;
+        float percent = Mathf.Clamp01(1f - (float) this.health / (float) this.maxHealth);
         this.mask.transform.localScale = new Vector3(percent, this.mask.transform.localScale.y, this.mask.transform.localScale.z);
     }
 }
