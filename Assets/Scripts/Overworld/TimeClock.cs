@@ -13,7 +13,7 @@ public class TimeClock : MonoBehaviour
     void Awake()
     {
         GameManager manager = FindObjectOfType<GameManager>();
-        timer = manager.GetComponent<Timer>();
+        timer = FindObjectOfType<Timer>();
 
         timerText = gameObject.GetComponent<TextMeshProUGUI>();
         timerText.text = "5:00";

@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
 {
     private static int m_referenceCount = 0;
     private static GameManager m_instance;
+    private Canvas canvas;
 
     Vector2 playerPos;
     public int currentChef = -1;
@@ -34,6 +35,7 @@ public class GameManager : MonoBehaviour
         DontDestroyOnLoad(this.gameObject);
         playerPos = this.transform.position;
         defeatedChefs = new List<int>();
+        canvas = GetComponent<Canvas>();
     }
 
     void OnEnable()
@@ -91,6 +93,7 @@ public class GameManager : MonoBehaviour
         {
             player.MovePlayer(playerPos);
         }
+        canvas.worldCamera = Camera.main;
     }
 
     void OnDestroy()

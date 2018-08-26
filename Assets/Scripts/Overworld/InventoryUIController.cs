@@ -14,7 +14,7 @@ public class InventoryUIController : MonoBehaviour {
     {
         if (!inventory) {
             GameManager manager = FindObjectOfType<GameManager>();
-            inventory = manager.GetComponent<Inventory>();
+            inventory = FindObjectOfType<Inventory>();
         }
     }
 
