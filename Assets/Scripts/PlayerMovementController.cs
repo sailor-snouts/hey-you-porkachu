@@ -97,8 +97,12 @@ public class PlayerMovementController : MonoBehaviour
             // top or bottom
             int dir = veritcal > 0 ? 1 : -1;
             this.facing = veritcal > 0 ? PlayerAnimation.ANIMATION_WALK_UP : PlayerAnimation.ANIMATION_WALK_DOWN;
-            this.animator.SetInteger("WalkingDirection", this.facing);
             this.move = new Vector2(0, 1 * dir);
+            if(this.animator.GetInteger("WalkingDirection") != this.facing)
+            {
+                Debug.Log("changing animation");
+                this.animator.SetInteger("WalkingDirection", this.facing);
+            }
         }
         else
         {
