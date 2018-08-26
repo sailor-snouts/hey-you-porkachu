@@ -8709,6 +8709,11 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114654583609601312, guid: c3c3b95d47acb33409b89e2cb31e3ae3,
+        type: 2}
+      propertyPath: inventory
+      value: 
+      objectReference: {fileID: 1678865105}
     - target: {fileID: 223497310638447896, guid: c3c3b95d47acb33409b89e2cb31e3ae3,
         type: 2}
       propertyPath: m_Camera
@@ -8744,7 +8749,7 @@ Prefab:
       propertyPath: m_isInputParsingRequired
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 114671327649077290, guid: c3c3b95d47acb33409b89e2cb31e3ae3,
+    - target: {fileID: 114625658299397816, guid: c3c3b95d47acb33409b89e2cb31e3ae3,
         type: 2}
       propertyPath: m_havePropertiesChanged
       value: 1
@@ -8813,6 +8818,21 @@ Prefab:
         type: 2}
       propertyPath: m_SortingOrder
       value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 114269890750536620, guid: c3c3b95d47acb33409b89e2cb31e3ae3,
+        type: 2}
+      propertyPath: m_havePropertiesChanged
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114269890750536620, guid: c3c3b95d47acb33409b89e2cb31e3ae3,
+        type: 2}
+      propertyPath: m_isInputParsingRequired
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114671327649077290, guid: c3c3b95d47acb33409b89e2cb31e3ae3,
+        type: 2}
+      propertyPath: m_havePropertiesChanged
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c3c3b95d47acb33409b89e2cb31e3ae3, type: 2}
@@ -9937,17 +9957,134 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e187ed056233744d38b092f8ab1f7599, type: 2}
   m_IsPrefabAsset: 0
---- !u!1 &2015941670 stripped
+--- !u!1 &1946859273 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1492241679867128, guid: a111f87aac6354b7fbe867a14c5c2535,
+    type: 2}
+  m_PrefabInternal: {fileID: 1139969065}
+--- !u!82 &1946859276
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1946859273}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 4842a27f4da0cf74d9a3de9ea43eaedc, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!4 &2015941678 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4126284671592092, guid: 8e5821c1e3ea646ce8eccd2747288ad9,
+    type: 2}
+  m_PrefabInternal: {fileID: 1735024480}
+--- !u!1 &2035197990 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1254003719330800, guid: 8e5821c1e3ea646ce8eccd2747288ad9,
     type: 2}
   m_PrefabInternal: {fileID: 1735024480}
---- !u!114 &2015941671
+--- !u!114 &2035197991
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2015941670}
+  m_GameObject: {fileID: 2035197990}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac46d1c0c402a4c8ea1a235360d1c1f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chefType: 4
+--- !u!114 &2035197992
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2035197990}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 68c4914d1ebe107459acfcda0ab8b391, type: 3}
@@ -9956,26 +10093,9 @@ MonoBehaviour:
   dialogue:
     name: Chef
     sentences:
-    - 'Who are you?  Get out of my kitchen! '
+    - Go on, scram! You aren't worthy to cook in my kitchen!
     scene: 0
   triggerId: 0
---- !u!114 &2015941672
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2015941670}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ac46d1c0c402a4c8ea1a235360d1c1f9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  chefType: 4
---- !u!4 &2015941678 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4126284671592092, guid: 8e5821c1e3ea646ce8eccd2747288ad9,
-    type: 2}
-  m_PrefabInternal: {fileID: 1735024480}
 --- !u!1 &2083679013
 GameObject:
   m_ObjectHideFlags: 0

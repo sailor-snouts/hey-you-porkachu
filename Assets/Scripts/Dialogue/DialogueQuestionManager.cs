@@ -16,6 +16,9 @@ public class DialogueQuestionManager : MonoBehaviour
     private Renderer rend;
     private bool canChangeSelection = true;
     private int currentSelection = 1;
+    [SerializeField]
+    private AudioClip select;
+    private AudioSource audio;
 
     private Queue<string> sentences;
 
@@ -24,6 +27,7 @@ public class DialogueQuestionManager : MonoBehaviour
         sentences = new Queue<string>();
         rend = GetComponent<Renderer>();
         this.setRenderers(false);
+        this.audio = gameObject.GetComponent<AudioSource>();
     }
 
     void Update()
@@ -102,6 +106,11 @@ public class DialogueQuestionManager : MonoBehaviour
 
     public int EndDialogue()
     {
+        if (this.select != null)
+        {
+            this.audio.PlayOneShot(this.select);
+        }
+
         this.question.text = "";
         this.answer1.text = "";
         this.answer2.text = "";
