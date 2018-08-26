@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class TargetController : MonoBehaviour {
 
@@ -22,6 +23,10 @@ public class TargetController : MonoBehaviour {
     private void OnCollisionEnter2D(Collision2D collision) {
         Destroy(gameObject);
         Destroy(collision.gameObject);
+
+        // @TODO WHOA THIS IS GROSS
+        // @TODO Head back to the Restaurant.  You won!
+        SceneManager.LoadScene(3);
     }
 
     private void shrink() {

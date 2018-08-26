@@ -35,30 +35,31 @@ public class GameManager : MonoBehaviour
     void OnEnable()
     {
         SceneManager.sceneLoaded += OnSceneLoaded;
-        SceneManager.sceneUnloaded += OnSceneUnloaded;
     }
 
     void OnDisable()
     {
         SceneManager.sceneLoaded -= OnSceneLoaded;
-        SceneManager.sceneUnloaded += OnSceneUnloaded;
     }
+
+    private void Update()
+    {
+        PlayerMovementController player = FindObjectOfType<PlayerMovementController>();
+        if (player)
+        {
+            playerPos = player.PlayerPosition();
+        }
+     }
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         Debug.Log("Scene loaded: " + scene.name);
-        // Place the player at the right transform
 
         PlayerMovementController player = FindObjectOfType<PlayerMovementController>();
-        player.MovePlayer(playerPos);
-    }
-
-    private void OnSceneUnloaded(Scene scene)
-    {
-        Debug.Log("Scene Unloaded: " + scene.name);
-
-        PlayerMovementController player = FindObjectOfType<PlayerMovementController>();
-        playerPos = player.PlayerPosition();
+        if (player)
+        {
+            player.MovePlayer(playerPos);
+        }
     }
 
     void OnDestroy()
