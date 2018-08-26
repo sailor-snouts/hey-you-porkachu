@@ -24,6 +24,8 @@ public class BattleItemController : MonoBehaviour {
     private Vector2 terminalVector;
     private CircleCollider2D circleCollider;
     private bool onTheFloor = false;
+    [SerializeField, Range(1, 10)]
+    private int damage = 10;
 
     void Start() {
         circleCollider = GetComponent<CircleCollider2D>();
@@ -75,5 +77,9 @@ public class BattleItemController : MonoBehaviour {
             onTheFloor = true;
             GetComponent<Rigidbody2D>().gravityScale = 1;
         }            
+    }
+
+    public int GetDamage() {
+        return damage;
     }
 }

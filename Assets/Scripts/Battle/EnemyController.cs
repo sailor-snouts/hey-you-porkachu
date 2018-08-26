@@ -17,7 +17,8 @@ public class EnemyController : MonoBehaviour {
     public Sprite guardedSprite;
     public Sprite unguardedSprite;
     private BoxCollider2D col;
-    
+    public GameObject healthPrefab;
+    private HealthBar healthBar;
 
     // Use this for initialization
     void Start () {
@@ -26,6 +27,8 @@ public class EnemyController : MonoBehaviour {
         GetComponent<SpriteRenderer>().sprite = unguardedSprite;
         Invoke("ToggleGuard", 2f);
         col = GetComponent<BoxCollider2D>();
+        GameObject healthInstance = Instantiate(healthPrefab, healthPrefab.transform.position, Quaternion.identity);
+        healthBar = healthInstance.GetComponent<HealthBar>();        
     }
 	
 	// Update is called once per frame
@@ -41,10 +44,10 @@ public class EnemyController : MonoBehaviour {
     private void ToggleGuard() {
         Sprite currentSprite = GetComponent<SpriteRenderer>().sprite;
         if(currentSprite == guardedSprite) {
-            GetComponent<SpriteRenderer>().sprite = unguardedSprite;
+            spriteR.sprite = unguardedSprite;
             col.enabled = true;
         } else {
-            GetComponent<SpriteRenderer>().sprite = guardedSprite;
+            spriteR.sprite = guardedSprite;
             col.enabled = false;
         }
 
@@ -67,15 +70,14 @@ public class EnemyController : MonoBehaviour {
     }
 
     private void OnCollisionEnter2D(Collision2D collision) {
-        // @TODO Make this a calculation of HP etc and move this code to after
-        Destroy(gameObject);
-        Destroy(collision.gameObject);
-
-        // @TODO Move this to HP calculation
-        // @TODO Head back to the Restaurant.  You won!
-        GameManager gameManager = FindObjectOfType<GameManager>();
-        if(gameManager) {
-            gameManager.EndBattle(true);
+        BattleItemController item = collision.gameObject.GetComponent<BattleItemController>();
+        healthBar.HurtLove(item.GetDamage());        
+        if(!healthBar.IsAlive()) {
+            GameManager gameManager = FindObjectOfType<GameManager>();
+            if (gameManager) {
+                gameManager.EndBattle(true);
+            }
         }
+        Destroy(collision.gameObject);
     }
 }

@@ -36,7 +36,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1533985538741788}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 2.04, z: 0}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
   m_LocalScale: {x: 3.51, y: 3.5, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -82,6 +82,8 @@ MonoBehaviour:
   boundary: 4
   guardedSprite: {fileID: 21300000, guid: be632697d664c2d4ca93d8957f60a9a3, type: 3}
   unguardedSprite: {fileID: 21300000, guid: bf9c644bda240b84a87a618e817d2086, type: 3}
+  healthPrefab: {fileID: 1018671993683972, guid: 60187404283b58a4a99db51b3ed07695,
+    type: 2}
 --- !u!212 &212061731030737890
 SpriteRenderer:
   m_ObjectHideFlags: 1
