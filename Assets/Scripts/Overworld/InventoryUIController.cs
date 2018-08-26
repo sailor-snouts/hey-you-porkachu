@@ -24,9 +24,9 @@ public class InventoryUIController : MonoBehaviour {
             return;
         }
 
-        dough.enabled = inventory.dough;		
-        onion.enabled = inventory.onion;        
-        pork.enabled = inventory.pork;        
-        bun.enabled = inventory.bun;        
+        dough.enabled = inventory.HasItem(ItemType.DOUGH);		
+        onion.enabled = inventory.HasItem(ItemType.ONION);        
+        pork.enabled = inventory.HasItem(ItemType.PORK);        
+        bun.enabled = inventory.HasItem(ItemType.BUN);        
 	}
 }

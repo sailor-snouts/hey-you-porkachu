@@ -4,16 +4,33 @@ using UnityEngine;
 
 public class Inventory : MonoBehaviour {
 
-    public bool onion = false;
-    public bool dough = false;
-    public bool pork = false;
-    public bool bun = false;
     public int porkachuType = 0;
 
+    private List<Item> items;
     private List<Key> keys;
 
     void Start() {
         keys = new List<Key>();
+        items = new List<Item>();
+    }
+
+    public void AddItem(int item)
+    {
+        Debug.Log("Adding item " + item);
+        Item newItem = ScriptableObject.CreateInstance<Item>();
+        newItem.type = item;
+        items.Add(newItem);
+    }
+
+    public bool HasItem(int itemType)
+    {
+        foreach (Item item in items)
+        {
+            if (item.type == itemType)
+                return true;
+        }
+
+        return false;
     }
 
     public void AddKey(int key) {

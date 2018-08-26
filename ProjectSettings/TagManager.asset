@@ -12,6 +12,8 @@ TagManager:
   - Tree
   - Wastebasket
   - Question
+  - Dough
+  - ItemPickup
   layers:
   - Default
   - TransparentFX
