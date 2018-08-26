@@ -1728,6 +1728,7 @@ Transform:
   - {fileID: 1638238147}
   - {fileID: 201441086}
   - {fileID: 1658490286}
+  - {fileID: 1550174725}
   m_Father: {fileID: 0}
   m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -8257,6 +8258,48 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1215790625
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4126284671592092, guid: 8e5821c1e3ea646ce8eccd2747288ad9, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -6.47
+      objectReference: {fileID: 0}
+    - target: {fileID: 4126284671592092, guid: 8e5821c1e3ea646ce8eccd2747288ad9, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 8.76
+      objectReference: {fileID: 0}
+    - target: {fileID: 4126284671592092, guid: 8e5821c1e3ea646ce8eccd2747288ad9, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4126284671592092, guid: 8e5821c1e3ea646ce8eccd2747288ad9, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4126284671592092, guid: 8e5821c1e3ea646ce8eccd2747288ad9, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4126284671592092, guid: 8e5821c1e3ea646ce8eccd2747288ad9, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4126284671592092, guid: 8e5821c1e3ea646ce8eccd2747288ad9, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4126284671592092, guid: 8e5821c1e3ea646ce8eccd2747288ad9, type: 2}
+      propertyPath: m_RootOrder
+      value: 17
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 8e5821c1e3ea646ce8eccd2747288ad9, type: 2}
+  m_IsPrefabAsset: 0
 --- !u!1001 &1226075762
 Prefab:
   m_ObjectHideFlags: 0
@@ -8874,7 +8917,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogue:
-    name: Storage
+    name: Trashcan
     sentences:
     - You find Onions!
 --- !u!114 &1550174723
@@ -8919,13 +8962,13 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1550174720}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -6.49, y: 7.57, z: -0.65150774}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2083679015}
-  m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_Father: {fileID: 183117581}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1624718996
 GameObject:
@@ -8973,7 +9016,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogue:
-    name: Storage
+    name: Pig
     sentences:
     - You find Pork!
 --- !u!114 &1624718999
@@ -9024,7 +9067,7 @@ Transform:
   m_Children:
   - {fileID: 953809200}
   m_Father: {fileID: 0}
-  m_RootOrder: 17
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1636194831
 Prefab:

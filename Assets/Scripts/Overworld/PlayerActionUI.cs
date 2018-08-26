@@ -97,6 +97,11 @@ public class PlayerActionUI : MonoBehaviour {
                     Door door = obj.GetComponent<Door>();
                     door.TakeAction(this.movement, this.inventory);
                     break;
+                case "Chef":
+                    ChefController chef = obj.GetComponent<ChefController>();
+                    GameManager manager = FindObjectOfType<GameManager>();
+                    manager.LoadBattle(chef);
+                    break;
                 default: 
                     break;
             }

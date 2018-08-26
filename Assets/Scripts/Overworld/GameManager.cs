@@ -9,6 +9,9 @@ public class GameManager : MonoBehaviour
     private static GameManager m_instance;
 
     Vector2 playerPos;
+    int currentChef = -1;
+    List<int> defeatedChefs;
+
 
     public static GameManager Instance
     {
@@ -30,6 +33,7 @@ public class GameManager : MonoBehaviour
         m_instance = this;
         DontDestroyOnLoad(this.gameObject);
         playerPos = this.transform.position;
+        defeatedChefs = new List<int>();
     }
 
     void OnEnable()
@@ -51,10 +55,27 @@ public class GameManager : MonoBehaviour
         }
      }
 
-    // @TODO Params for which battle!
-    public void LoadBattle() 
+    public void LoadBattle(ChefController chef) 
     {
+        // @TODO: Set the type based on the chef that was passed in?
+        currentChef = chef.chefType;
         SceneManager.LoadScene("Battle");
+    }
+
+    public void EndBattle(bool win) {
+        if(win) {
+            defeatedChefs.Add(currentChef);
+            SceneManager.LoadScene("Restaurant");
+            //battleChef.EndEncounter();
+        }
+    }
+
+    public bool ChefDefeated(int type) {
+        foreach(int chef in defeatedChefs) {
+            if (chef == type)
+                return true;
+        }
+        return false;
     }
 
     public void LoadRestaurant()
