@@ -12,8 +12,10 @@ public class InventoryUIController : MonoBehaviour {
 
     private void Start()
     {
-        if (!inventory)
-            Debug.LogError("Inventory UI could NOT find Inventory");
+        if (!inventory) {
+            GameManager manager = FindObjectOfType<GameManager>();
+            inventory = manager.GetComponent<Inventory>();
+        }
     }
 
     void Update () {

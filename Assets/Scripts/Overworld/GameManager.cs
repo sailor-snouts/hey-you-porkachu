@@ -51,6 +51,17 @@ public class GameManager : MonoBehaviour
         }
      }
 
+    // @TODO Params for which battle!
+    public void LoadBattle() 
+    {
+        SceneManager.LoadScene("Battle");
+    }
+
+    public void LoadRestaurant()
+    {
+        SceneManager.LoadScene("Restaurant");
+    }
+
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         Debug.Log("Scene loaded: " + scene.name);
