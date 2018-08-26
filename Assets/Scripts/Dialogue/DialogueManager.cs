@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class DialogueManager : MonoBehaviour
 {
@@ -10,8 +11,8 @@ public class DialogueManager : MonoBehaviour
     public TextMeshProUGUI dialogueText;
     private Renderer rend;
     private PlayerMovementController movement;
-
     private Queue<string> sentences;
+    private int scene;
     
     void Awake()
     {
@@ -57,6 +58,7 @@ public class DialogueManager : MonoBehaviour
         this.movement = movement;
         this.movement.SetLocked(true);            
         this.setRenderers(true);
+        this.scene = dialogue.scene;
         this.nameText.text = dialogue.name;
         sentences.Clear();
 
@@ -86,5 +88,10 @@ public class DialogueManager : MonoBehaviour
         nameText.text = "";
         this.setRenderers(false);
         this.movement.SetLocked(false);
+
+        if(this.scene > 0)
+        {
+            SceneManager.LoadScene(this.scene);
+        }
     }
 }
