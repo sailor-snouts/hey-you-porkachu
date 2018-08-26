@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class Timer : MonoBehaviour {
 
@@ -22,8 +23,9 @@ public class Timer : MonoBehaviour {
         string niceTime = string.Format("{0:0}:{1:00}", minutes, seconds);
         timerText.text = niceTime;
 
-        if (timeLeft < 0) {
-            Debug.Log("GAME OVER MAN");
+        if (timeLeft < 0)
+        {
+            SceneManager.LoadScene("Title");
         }
     }
 }

@@ -1879,6 +1879,11 @@ GameObject:
   - component: {fileID: 242062829}
   - component: {fileID: 242062836}
   - component: {fileID: 242062830}
+  - component: {fileID: 242062841}
+  - component: {fileID: 242062840}
+  - component: {fileID: 242062839}
+  - component: {fileID: 242062838}
+  - component: {fileID: 242062837}
   - component: {fileID: 242062828}
   m_Layer: 10
   m_Name: Maitre D
@@ -1925,12 +1930,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogue:
-    question: question 2
+    question: "You enter a forest and hear the roar of a bear! What do you do?\r\n"
     answers:
-    - 1
-    - 2
-    - 3
-    - 4
+    - 'I climb the nearest tree! '
+    - '2I quickly bury my sandwiches! '
+    - 'ROAR! '
+    - 'I invite the bear for tea. '
 --- !u!50 &242062831
 Rigidbody2D:
   serializedVersion: 4
@@ -2070,12 +2075,102 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogue:
-    question: question 1
+    question: "You are invited to a romantic dinner to eat your favorite food!\t"
     answers:
-    - 1
-    - 2
-    - 3
-    - 4
+    - 'Gimme dumplings! '
+    - 'Ice Cream please! '
+    - "It\u2019s Gotta be Steak! "
+    - 'I want spaghetti. '
+--- !u!114 &242062837
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 242062827}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6624e55a6dc44644bc053bb70520abd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    question: "Your friend\u2019s leg is caught in a beartrap!\r"
+    answers:
+    - 'They better have gotten caught - I set that weeks ago. '
+    - 'Oh no! Time to cry. '
+    - 'I rip the trap open to free them with my massive strength! '
+    - 'I disassemble the trap carefully while they bleed on my hands. '
+--- !u!114 &242062838
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 242062827}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6624e55a6dc44644bc053bb70520abd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    question: "Which element type are you?\r"
+    answers:
+    - "What is this, I\u2019m only a baby. "
+    - Bubblegum
+    - 'PURE FIRE! '
+    - Argon
+--- !u!114 &242062839
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 242062827}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6624e55a6dc44644bc053bb70520abd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    question: "What kind of heart do you have?\r"
+    answers:
+    - Fire!
+    - Pink!
+    - Black!
+    - depends on how I feel
+--- !u!114 &242062840
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 242062827}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6624e55a6dc44644bc053bb70520abd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    question: "You have a dozen apples, but only two pockets. How do you solve this?\r"
+    answers:
+    - "I can\u2019t hold this many apples!"
+    - 'I make a dozen friends. '
+    - 'I eat ten apples. '
+    - 'I plant the apples. '
+--- !u!114 &242062841
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 242062827}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6624e55a6dc44644bc053bb70520abd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    question: "Which season do you enjoy best?\r"
+    answers:
+    - 'Season 4 '
+    - Summertime!
+    - 'When meat grows best. '
+    - Cayenne
 --- !u!1001 &246409507
 Prefab:
   m_ObjectHideFlags: 0
@@ -8870,7 +8965,7 @@ Prefab:
     - target: {fileID: 114611389662845930, guid: 6884e4d9038db4c4c8f847febe32d3fb,
         type: 2}
       propertyPath: m_isInputParsingRequired
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224449255482852738, guid: 6884e4d9038db4c4c8f847febe32d3fb,
         type: 2}
@@ -8880,12 +8975,12 @@ Prefab:
     - target: {fileID: 224898044208597528, guid: 6884e4d9038db4c4c8f847febe32d3fb,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: -61.867188
+      value: -953.43365
       objectReference: {fileID: 0}
     - target: {fileID: 224898044208597528, guid: 6884e4d9038db4c4c8f847febe32d3fb,
         type: 2}
       propertyPath: m_SizeDelta.x
-      value: -123.73465
+      value: -126.86731
       objectReference: {fileID: 0}
     - target: {fileID: 224449255482852738, guid: 6884e4d9038db4c4c8f847febe32d3fb,
         type: 2}
@@ -8901,6 +8996,46 @@ Prefab:
         type: 2}
       propertyPath: m_padding
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224898044208597528, guid: 6884e4d9038db4c4c8f847febe32d3fb,
+        type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224898044208597528, guid: 6884e4d9038db4c4c8f847febe32d3fb,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: -96
+      objectReference: {fileID: 0}
+    - target: {fileID: 114611389662845930, guid: 6884e4d9038db4c4c8f847febe32d3fb,
+        type: 2}
+      propertyPath: m_fontSize
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 114611389662845930, guid: 6884e4d9038db4c4c8f847febe32d3fb,
+        type: 2}
+      propertyPath: m_fontSizeBase
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 114611389662845930, guid: 6884e4d9038db4c4c8f847febe32d3fb,
+        type: 2}
+      propertyPath: m_textAlignment
+      value: 513
+      objectReference: {fileID: 0}
+    - target: {fileID: 114611389662845930, guid: 6884e4d9038db4c4c8f847febe32d3fb,
+        type: 2}
+      propertyPath: m_margin.z
+      value: 116.08922
+      objectReference: {fileID: 0}
+    - target: {fileID: 224449255482852738, guid: 6884e4d9038db4c4c8f847febe32d3fb,
+        type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: -185
+      objectReference: {fileID: 0}
+    - target: {fileID: 224449255482852738, guid: 6884e4d9038db4c4c8f847febe32d3fb,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: -30
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6884e4d9038db4c4c8f847febe32d3fb, type: 2}
@@ -9922,7 +10057,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1885579147}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -9720.001}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 100, y: 100, z: 108.000015}
   m_Children: []
   m_Father: {fileID: 1195156152}
