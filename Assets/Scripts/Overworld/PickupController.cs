@@ -22,7 +22,8 @@ public class PickupController : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        pickupSprite.SetActive(false);
+        if(pickupSprite)
+            pickupSprite.SetActive(false);
 	}
 	
 	// Update is called once per frame
