@@ -24,6 +24,7 @@ public class PorkachuBattleController : EnemyController
         GameObject healthInstance = Instantiate(healthPrefab, healthPrefab.transform.position, Quaternion.identity);
         healthBar = healthInstance.GetComponent<HealthBar>();
         healthBar.ToggleHealthMode();
+        this.audio = gameObject.GetComponent<AudioSource>();
     }
 
     // Update is called once per frame

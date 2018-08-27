@@ -9,10 +9,10 @@ public class EnemyController : MonoBehaviour {
     [SerializeField, Range(1, 7)]
     protected float boundary = 5;
     [SerializeField]
-    private AudioClip hit;
+    protected AudioClip hit;
     [SerializeField]
-    private AudioClip block;
-    private AudioSource audio;
+    protected AudioClip block;
+    protected AudioSource audio;
     protected float y;
     protected bool moving = false;
     float movementAmount;
@@ -74,20 +74,16 @@ public class EnemyController : MonoBehaviour {
     }
 
     private void OnCollisionEnter2D(Collision2D collision) {
-
-        Sprite currentSprite = GetComponent<SpriteRenderer>().sprite;
-        if (this.audio)
+        Sprite currentSprite = GetComponent<SpriteRenderer>().sprite;       
+        if (currentSprite == guardedSprite)
         {
-            if (currentSprite == guardedSprite)
-            {
-                this.audio.PlayOneShot(this.block);
-                return;
-            }
-            else
-            {
-                this.audio.PlayOneShot(this.hit);
-            }
+            this.audio.PlayOneShot(this.block);
+            return;
         }
+        else
+        {
+            this.audio.PlayOneShot(this.hit);
+        }        
 
         BattleItemController item = collision.gameObject.GetComponent<BattleItemController>();
         healthBar.HurtLove(item.GetDamage());        
