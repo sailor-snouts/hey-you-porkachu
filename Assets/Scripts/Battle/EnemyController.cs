@@ -8,6 +8,11 @@ public class EnemyController : MonoBehaviour {
     protected float speed = 0.1f;
     [SerializeField, Range(1, 7)]
     protected float boundary = 5;
+    [SerializeField]
+    private AudioClip hit;
+    [SerializeField]
+    private AudioClip block;
+    private AudioSource audio;
     protected float y;
     protected bool moving = false;
     float movementAmount;
@@ -28,7 +33,8 @@ public class EnemyController : MonoBehaviour {
         Invoke("ToggleGuard", 2f);
         col = GetComponent<BoxCollider2D>();
         GameObject healthInstance = Instantiate(healthPrefab, healthPrefab.transform.position, Quaternion.identity);
-        healthBar = healthInstance.GetComponent<HealthBar>();        
+        healthBar = healthInstance.GetComponent<HealthBar>();
+        this.audio = gameObject.GetComponent<AudioSource>();
     }
 	
 	// Update is called once per frame
@@ -45,10 +51,8 @@ public class EnemyController : MonoBehaviour {
         Sprite currentSprite = GetComponent<SpriteRenderer>().sprite;
         if(currentSprite == guardedSprite) {
             spriteR.sprite = unguardedSprite;
-            col.enabled = true;
         } else {
             spriteR.sprite = guardedSprite;
-            col.enabled = false;
         }
 
         Invoke("ToggleGuard", Random.Range(2, 3));
@@ -70,6 +74,16 @@ public class EnemyController : MonoBehaviour {
     }
 
     private void OnCollisionEnter2D(Collision2D collision) {
+
+        Sprite currentSprite = GetComponent<SpriteRenderer>().sprite;
+        if (currentSprite == guardedSprite)
+        {
+            this.audio.PlayOneShot(this.block);
+            return;
+        } else {
+            this.audio.PlayOneShot(this.hit);
+        }
+
         BattleItemController item = collision.gameObject.GetComponent<BattleItemController>();
         healthBar.HurtLove(item.GetDamage());        
         if(!healthBar.IsAlive()) {
