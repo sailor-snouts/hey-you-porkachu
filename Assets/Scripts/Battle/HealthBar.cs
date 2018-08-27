@@ -5,7 +5,7 @@ using UnityEngine;
 public class HealthBar : MonoBehaviour
 {
     [SerializeField]
-    private bool IsHealth = true;
+    private bool isHealth = true;
     [SerializeField]
     private int maxHealth = 100;
     [SerializeField]
@@ -20,7 +20,7 @@ public class HealthBar : MonoBehaviour
         this.mask = GetComponentInChildren<SpriteMask>();
         this.health = this.maxHealth;
         this.UpdateMask();
-        if(this.IsHealth)
+        if(this.isHealth)
         {
             this.healthFrame.enabled = true;
             this.loveFrame.enabled = false;
@@ -42,7 +42,7 @@ public class HealthBar : MonoBehaviour
 
     public void HurtLove(int dmg)
     {
-        if(!this.IsHealth)
+        if(!this.isHealth)
         {
             dmg *= -1;
         }
@@ -54,5 +54,9 @@ public class HealthBar : MonoBehaviour
     {
         float percent = Mathf.Clamp01(1f - (float) this.health / (float) this.maxHealth);
         this.mask.transform.localScale = new Vector3(percent, this.mask.transform.localScale.y, this.mask.transform.localScale.z);
+    }
+
+    public void ToggleHealthMode() {
+        isHealth = !isHealth;
     }
 }

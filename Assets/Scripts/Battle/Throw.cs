@@ -14,8 +14,6 @@ public class Throw : MonoBehaviour {
     private float throwDelay = 0.25f;
     [SerializeField, Range(0, 5f)]
     private float targetYPosition = 3.5f;
-    //This state should be fetched from the game manager or something, just here for testing
-    private bool throwBun = false;
     [SerializeField]
     private AudioClip sound;
     private AudioSource audio;
@@ -23,6 +21,7 @@ public class Throw : MonoBehaviour {
     void Awake() {
         spriteR = itemPrefab.GetComponent<SpriteRenderer>();
         this.audio = gameObject.GetComponent<AudioSource>();
+        GameManager gm = FindObjectOfType<GameManager>();        
     }
 
     void Update() {
@@ -50,12 +49,17 @@ public class Throw : MonoBehaviour {
     }
 
     private GameObject GetItemToThrow(Vector2 position) {
-        if(throwBun) {
+        if(IsFightingPorkachu()) {
             return Instantiate(bunPrefab, position, Quaternion.identity);
         } else {
             GameObject itemInstance = Instantiate(itemPrefab, position, Quaternion.identity);
             SetRandomSprite(itemInstance);
             return itemInstance;
         }
+    }
+
+    private bool IsFightingPorkachu() {
+        GameManager gm = FindObjectOfType<GameManager>();
+        return gm.currentChef == ChefType.PORKACHU;
     }
 }
