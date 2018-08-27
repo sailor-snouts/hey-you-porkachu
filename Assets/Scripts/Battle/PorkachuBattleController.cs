@@ -16,11 +16,11 @@ public class PorkachuBattleController : EnemyController {
         initializePorkachuMap();
         inventory = FindObjectOfType<Inventory>();
         int porkachuType = inventory.porkachuType;
-        Debug.Log(porkachuType);
         GetComponent<SpriteRenderer>().sprite = porkachus[porkachuType];
         this.y = this.transform.position.y;
         GameObject healthInstance = Instantiate(healthPrefab, healthPrefab.transform.position, Quaternion.identity);
         healthBar = healthInstance.GetComponent<HealthBar>();
+        healthBar.ToggleHealthMode();
     }
 
     // Update is called once per frame
