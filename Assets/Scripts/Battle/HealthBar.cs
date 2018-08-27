@@ -18,16 +18,17 @@ public class HealthBar : MonoBehaviour
     private void Start()
     {
         this.mask = GetComponentInChildren<SpriteMask>();
-        this.health = this.maxHealth;
-        this.UpdateMask();
         if(this.isHealth)
         {
+            this.health = this.maxHealth;
             this.healthFrame.enabled = true;
             this.loveFrame.enabled = false;
         } else {
+            this.health = 0;
             this.loveFrame.enabled = true;
             this.healthFrame.enabled = false;
         }
+        this.UpdateMask();
     }
 
     public bool IsAlive()
