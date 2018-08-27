@@ -27,11 +27,7 @@ public class PorkChefController: ChefController {
 		GameManager gameManager = FindObjectOfType<GameManager>();
         gameManager.currentChef = chefType;
 
-        Inventory inventory = gameManager.GetComponent<Inventory>();
-        // has onion and has dough
-        //  - show pre-fight message
-        // else
-        //  - show no fight message
+        Inventory inventory = FindObjectOfType<Inventory>();
 
         if(inventory.HasItem(ItemType.DOUGH) && inventory.HasItem(ItemType.ONION))
         {

@@ -27,7 +27,7 @@ public class BunChefController : ChefController {
         GameManager gameManager = FindObjectOfType<GameManager>();
         gameManager.currentChef = chefType;
 
-        Inventory inventory = gameManager.GetComponent<Inventory>();
+        Inventory inventory = FindObjectOfType<Inventory>();
 
         if (inventory.HasItem(ItemType.DOUGH) && inventory.HasItem(ItemType.ONION) && inventory.HasItem(ItemType.PORK))
         {
