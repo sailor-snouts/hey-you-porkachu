@@ -318,6 +318,7 @@ MonoBehaviour:
   pan: {fileID: 1533985538741788, guid: 8d126daf75da3a244b929a98b3390606, type: 2}
   pot: {fileID: 1533985538741788, guid: 088425d78a9dc96459a91fce380f6f06, type: 2}
   skillet: {fileID: 1533985538741788, guid: da1793e36e9c1c343b01de624eac0bfb, type: 2}
+  porkachu: {fileID: 1533985538741788, guid: b11b6d33e38ece549b8eb571fc8d3b2d, type: 2}
 --- !u!4 &1519544211
 Transform:
   m_ObjectHideFlags: 0

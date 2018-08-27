@@ -5,20 +5,20 @@ using UnityEngine;
 public class EnemyController : MonoBehaviour {
 
     [SerializeField, Range(0.07f, 0.2f)]
-    private float speed = 0.1f;
+    protected float speed = 0.1f;
     [SerializeField, Range(1, 7)]
-    private float boundary = 5;
-    private float y;
-    private bool moving = false;
+    protected float boundary = 5;
+    protected float y;
+    protected bool moving = false;
     float movementAmount;
     float destination;
     float destinationMargin = 0.3f;
-    private SpriteRenderer spriteR;
+    protected SpriteRenderer spriteR;
     public Sprite guardedSprite;
     public Sprite unguardedSprite;
-    private BoxCollider2D col;
+    protected BoxCollider2D col;
     public GameObject healthPrefab;
-    private HealthBar healthBar;
+    protected HealthBar healthBar;
 
     // Use this for initialization
     void Start () {
@@ -54,12 +54,12 @@ public class EnemyController : MonoBehaviour {
         Invoke("ToggleGuard", Random.Range(2, 3));
     }
 
-    private void CalculateMove() {
+    protected void CalculateMove() {
         int direction = Random.Range(-1, 2);
         destination = Mathf.Clamp(transform.position.x + Random.Range(0,6) * direction, -boundary, boundary);
     }
 
-    private void Move() {
+    protected void Move() {
         if(Mathf.Abs(transform.position.x - destination) < destinationMargin) {
             //Arrived at the current destination, so stop moving.
             moving = false;
