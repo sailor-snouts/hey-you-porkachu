@@ -80,6 +80,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 0.1
   boundary: 5
+  hit: {fileID: 8300000, guid: cfde7712717bdef41bcaccde6c356ef2, type: 3}
+  block: {fileID: 0}
   guardedSprite: {fileID: 0}
   unguardedSprite: {fileID: 0}
   healthPrefab: {fileID: 1018671993683972, guid: 60187404283b58a4a99db51b3ed07695,
