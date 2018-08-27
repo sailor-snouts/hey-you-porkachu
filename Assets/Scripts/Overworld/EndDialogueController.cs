@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class VictoryController : MonoBehaviour {
+public class EndDialogueController : MonoBehaviour {
 
     public float dialogueDelay = 3.5f;
 

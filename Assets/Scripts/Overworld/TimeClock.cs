@@ -8,6 +8,7 @@ public class TimeClock : MonoBehaviour
 {
     TextMeshProUGUI timerText;
     Timer timer;
+    bool gameOver = false;
 
     // Use this for initialization
     void Awake()
@@ -22,14 +23,20 @@ public class TimeClock : MonoBehaviour
     private void Update()
     {
         var timeLeft = timer.timeLeft;
+
+        if (!gameOver && timeLeft < 0) {
+            gameOver = true;
+            SceneManager.LoadScene("Lose");
+            return;
+        }
+
+        if(gameOver) {
+            return;
+        }
+        
         int minutes = Mathf.FloorToInt(timeLeft / 60F);
         int seconds = Mathf.FloorToInt(timeLeft - minutes * 60);
         string niceTime = string.Format("{0:0}:{1:00}", minutes, seconds);
         timerText.text = niceTime;
-
-        if (timeLeft < 0)
-        {
-            SceneManager.LoadScene("Title");
-        }
     }
 }
