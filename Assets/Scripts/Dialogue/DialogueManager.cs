@@ -17,6 +17,9 @@ public class DialogueManager : MonoBehaviour
     private AudioClip select;
     private AudioSource audio;
 
+    private float inputLag = 0.5f;
+    private float inputBuffer = 0.5f;
+
     void Awake()
     {
         sentences = new Queue<string>();
@@ -29,6 +32,12 @@ public class DialogueManager : MonoBehaviour
     {
         if (!this.isHavingDialogue())
         {
+            return;
+        }
+
+        // Make sure that fast or double clicks don't close dialog before it even comes up
+        inputBuffer -= Time.deltaTime;
+        if(inputBuffer > Mathf.Epsilon){
             return;
         }
 
@@ -59,6 +68,9 @@ public class DialogueManager : MonoBehaviour
 
     public void StartDialogue(Dialogue dialogue, PlayerMovementController movement)
     {
+        // Hold off on accepting new input for inputLag seconds 
+        inputBuffer = inputLag;
+
         Debug.Log("Starting dialogue...");
         if (movement)
         {
