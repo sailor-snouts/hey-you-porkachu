@@ -4,10 +4,25 @@ using UnityEngine;
 
 public class EnemyGenerator : MonoBehaviour {
 
-    public List<GameObject> enemies;
+    private Dictionary<int, GameObject> enemies = new Dictionary<int, GameObject>();
+    public GameObject cookingSheet;
+    public GameObject pan;
+    public GameObject pot;
+    public GameObject skillet;
+
 
 	void Start () {
-        GameObject enemy = enemies[Random.Range(0, enemies.Count)];
+        initializeEnemyMap();
+        GameManager gm = FindObjectOfType<GameManager>();
+        GameObject enemy = enemies[gm.currentChef];
+
         Instantiate(enemy, enemy.transform.position, Quaternion.identity);
 	}
+
+    private void initializeEnemyMap() {
+        enemies.Add(1, cookingSheet);
+        enemies.Add(2, pan);
+        enemies.Add(3, pot);
+        enemies.Add(4, skillet);
+    }
 }
