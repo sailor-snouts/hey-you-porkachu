@@ -8,7 +8,7 @@ public class PigPickupController : PickupController
     {
         GameManager manager = FindObjectOfType<GameManager>();
 
-        if( manager.ChefDefeated(3)) {
+        if( manager.ChefDefeated(ChefType.PORK_CHEF)) {
             pickupSprite.SetActive(true);
             animating = true;
             inventory.AddItem(pickupType);

@@ -2,6 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+public struct ChefType {
+    public static int DOUGH_CHEF = 1;
+    public static int ONION_CHEF = 2;
+    public static int PORK_CHEF = 3;
+    public static int BUN_CHEF = 4;
+    // @TODO Makes no sense here, gramatically, but functionally
+    public static int PORKACHU = 5;
+}
+
 public class ChefController : MonoBehaviour {
 
     [SerializeField]
