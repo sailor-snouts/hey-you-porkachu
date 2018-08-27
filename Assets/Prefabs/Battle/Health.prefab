@@ -172,8 +172,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c9bf91eee81a3e48bfeeda30495a808, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IsHealth: 1
-  maxHealth: 1000
+  isHealth: 1
+  maxHealth: 250
   healthFrame: {fileID: 212908144390539814}
   loveFrame: {fileID: 212878686436353688}
 --- !u!212 &212165232653165648
