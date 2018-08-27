@@ -60,8 +60,11 @@ public class DialogueManager : MonoBehaviour
     public void StartDialogue(Dialogue dialogue, PlayerMovementController movement)
     {
         Debug.Log("Starting dialogue...");
-        this.movement = movement;
-        this.movement.SetLocked(true);            
+        if (movement)
+        {
+            this.movement = movement;
+            this.movement.SetLocked(true);
+        }
         this.setRenderers(true);
         this.scene = dialogue.scene;
         this.nameText.text = dialogue.name;
@@ -97,7 +100,9 @@ public class DialogueManager : MonoBehaviour
         dialogueText.text = "";
         nameText.text = "";
         this.setRenderers(false);
-        this.movement.SetLocked(false);
+
+        if(this.movement) 
+            this.movement.SetLocked(false);
 
         if(this.scene > 0)
         {

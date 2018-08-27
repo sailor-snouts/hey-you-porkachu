@@ -1,8 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class PorkachuBattleController : EnemyController {
+public class PorkachuBattleController : EnemyController
+{
 
     private Dictionary<int, Sprite> porkachus = new Dictionary<int, Sprite>();
     private Inventory inventory;
@@ -12,7 +14,8 @@ public class PorkachuBattleController : EnemyController {
     public Sprite plainPork;
 
     // Use this for initialization
-    void Start () {
+    void Start()
+    {
         initializePorkachuMap();
         inventory = FindObjectOfType<Inventory>();
         int porkachuType = inventory.porkachuType;
@@ -24,8 +27,10 @@ public class PorkachuBattleController : EnemyController {
     }
 
     // Update is called once per frame
-    void Update() {
-        if (moving) {
+    void Update()
+    {
+        if (moving)
+        {
             Move();
             return;
         }
@@ -33,10 +38,16 @@ public class PorkachuBattleController : EnemyController {
         Move();
     }
 
-    private void initializePorkachuMap() {
+    private void initializePorkachuMap()
+    {
         porkachus.Add(2, dapperPork);
         porkachus.Add(3, dressPork);
         porkachus.Add(4, musclePork);
         porkachus.Add(1, plainPork);
+    }
+
+    public override void EndBattle()
+    {
+        SceneManager.LoadScene(5);
     }
 }

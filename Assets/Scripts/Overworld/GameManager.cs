@@ -88,6 +88,11 @@ public class GameManager : MonoBehaviour
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
+        Debug.Log("Scene loaded: " + scene.name);
+        if(scene.name == "Title") {
+            Destroy(this.gameObject);
+        }
+
         PlayerMovementController player = FindObjectOfType<PlayerMovementController>();
         if (player)
         {

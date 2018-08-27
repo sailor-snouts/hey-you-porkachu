@@ -8,7 +8,7 @@ public class BunPickupController : PickupController {
     {
         GameManager manager = FindObjectOfType<GameManager>();
 
-        if (manager.ChefDefeated(ChefType.BUN_CHEF))
+        if (Application.isEditor || manager.ChefDefeated(ChefType.BUN_CHEF))
         {
             pickupSprite.SetActive(true);
             animating = true;

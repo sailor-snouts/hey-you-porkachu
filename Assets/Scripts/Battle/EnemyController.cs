@@ -76,22 +76,32 @@ public class EnemyController : MonoBehaviour {
     private void OnCollisionEnter2D(Collision2D collision) {
 
         Sprite currentSprite = GetComponent<SpriteRenderer>().sprite;
-        if (currentSprite == guardedSprite)
+        if (this.audio)
         {
-            this.audio.PlayOneShot(this.block);
-            return;
-        } else {
-            this.audio.PlayOneShot(this.hit);
+            if (currentSprite == guardedSprite)
+            {
+                this.audio.PlayOneShot(this.block);
+                return;
+            }
+            else
+            {
+                this.audio.PlayOneShot(this.hit);
+            }
         }
 
         BattleItemController item = collision.gameObject.GetComponent<BattleItemController>();
         healthBar.HurtLove(item.GetDamage());        
-        if(!healthBar.IsAlive()) {
-            GameManager gameManager = FindObjectOfType<GameManager>();
-            if (gameManager) {
-                gameManager.EndBattle(true);
-            }
+        if(!healthBar.IsAlive() || healthBar.IsLoved()) {
+            EndBattle();
         }
         Destroy(collision.gameObject);
+    }
+
+    public virtual void EndBattle() {
+        GameManager gameManager = FindObjectOfType<GameManager>();
+        if (gameManager)
+        {
+            gameManager.EndBattle(true);
+        }
     }
 }
