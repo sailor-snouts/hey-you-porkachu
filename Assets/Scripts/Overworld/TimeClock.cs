@@ -8,9 +8,7 @@ public class TimeClock : MonoBehaviour
 {
     TextMeshProUGUI timerText;
     Timer timer;
-    bool gameOver = false;
 
-    // Use this for initialization
     void Awake()
     {
         GameManager manager = FindObjectOfType<GameManager>();
@@ -24,13 +22,12 @@ public class TimeClock : MonoBehaviour
     {
         var timeLeft = timer.timeLeft;
 
-        if (!gameOver && timeLeft < 0) {
-            gameOver = true;
+        if (!HasReachedEndScene() && timeLeft < 0) {
             SceneManager.LoadScene("Lose");
             return;
         }
 
-        if(gameOver) {
+        if(HasReachedEndScene()) {
             return;
         }
         
@@ -38,5 +35,10 @@ public class TimeClock : MonoBehaviour
         int seconds = Mathf.FloorToInt(timeLeft - minutes * 60);
         string niceTime = string.Format("{0:0}:{1:00}", minutes, seconds);
         timerText.text = niceTime;
+    }
+
+    private bool HasReachedEndScene() {
+        Scene scene = SceneManager.GetActiveScene();
+        return scene.name == "Victory" || scene.name == "Lose";
     }
 }
